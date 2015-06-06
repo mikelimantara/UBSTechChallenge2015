@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tech Challenge</string>
+
+    <!-- Login page -->
+    <string name="username">Enter your Username</string>
+    <string name="password">Enter your Password</string>
+
+    <!-- Button -->
+    <string name="btn_login">Login</string>
 </resources>
