@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Tech Challenge</string>
+    <string name="app_name">Elite Bank</string>
 
     <!-- Login page -->
     <string name="username">Enter your Username</string>
     <string name="password">Enter your Password</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
     <!-- Button -->
     <string name="btn_login">Login</string>
