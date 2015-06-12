@@ -2,6 +2,7 @@ package com.prototype.ubs.techchallenge;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -9,7 +10,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 
 /**
  * Created by Michael on 10/6/2015.
@@ -31,6 +35,17 @@ public class MainActivity extends ActionBarActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         setupDrawer();
+
+        if (findViewById(R.id.content_container) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+
+            LoginFragment loginFragment = new LoginFragment();
+            getSupportFragmentManager()
+                    .beginTransaction().add(R.id.content_container, loginFragment)
+                    .commit();
+        }
     }
 
     @Override

@@ -4,4 +4,13 @@
     <dimen name="action_bar_layout_height">50dp</dimen>
     <dimen name="action_bar_content_height">35dp</dimen>
     <dimen name="action_bar_title_fontsize">25sp</dimen>
+
+    <!-- Login -->
+    <dimen name="login_label_layout_height">30dp</dimen>
+    <dimen name="login_input_text_layout_height">40dp</dimen>
+    <dimen name="login_input_text_fontsize">15sp</dimen>
+
+    <!-- Main content -->
+    <dimen name="content_margin">25dp</dimen>
+
 </resources>
