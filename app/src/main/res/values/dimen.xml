@@ -13,4 +13,9 @@
     <!-- Main content -->
     <dimen name="content_margin">25dp</dimen>
 
+    <!-- Overview -->
+    <dimen name="overview_welcome_msg_fontsize">15sp</dimen>
+    <dimen name="overview_welcome_msg_padding">2dp</dimen>
+    <dimen name="overview_heading_fontsize">25sp</dimen>
+
 </resources>

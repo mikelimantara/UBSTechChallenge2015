@@ -1,30 +1,36 @@
 package com.prototype.ubs.techchallenge;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
+import com.prototype.ubs.techchallenge.fragment.OverviewFragment;
+import com.prototype.ubs.techchallenge.utils.Constants;
 
 /**
  * Created by Michael on 10/6/2015.
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener {
 
     private ActionBar actionBar = null;
     private ListView navList = null;
     private ArrayAdapter<String> drawerAdapter = null;
     private ActionBarDrawerToggle drawerToggle = null;
     private DrawerLayout drawerLayout = null;
+    private SharedPreferences sharedPrefs = null;
+    private boolean hasLogin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +38,42 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.main);
         initViews();
 
+        sharedPrefs = getSharedPreferences(Constants.SHARED_PREFS, Context.MODE_PRIVATE);
+
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        setupDrawer();
 
         if (findViewById(R.id.content_container) != null) {
             if (savedInstanceState != null) {
                 return;
             }
 
-            LoginFragment loginFragment = new LoginFragment();
-            getSupportFragmentManager()
-                    .beginTransaction().add(R.id.content_container, loginFragment)
-                    .commit();
+            if (hasLogin) {
+                Log.d("session", "login ady");
+                String[] drawerItems = {"Something", "Something"};
+                setNavigationDrawerItems(drawerItems);
+                setupDrawer();
+                OverviewFragment overviewFragment = new OverviewFragment();
+                getSupportFragmentManager()
+                        .beginTransaction().add(R.id.content_container, overviewFragment)
+                        .commit();
+            } else {
+                Log.d("session", "not login ady");
+                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
+                setNavigationDrawerItems(drawerItems);
+                setupDrawer();
+                LoginFragment loginFragment = new LoginFragment();
+                getSupportFragmentManager()
+                        .beginTransaction().add(R.id.content_container, loginFragment)
+                        .commit();
+            }
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
     }
 
     @Override
@@ -69,6 +97,20 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Callback method from loginFragment once login is successful
+    @Override
+    public void onLogin() {
+        OverviewFragment overviewFragment = new OverviewFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.content_container, overviewFragment);
+        transaction.commit();
+    }
+
+    public void setNavigationDrawerItems(String[] items) {
+        drawerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        navList.setAdapter(drawerAdapter);
+    }
+
     private void initViews() {
         navList = (ListView) findViewById(R.id.nav_list);
         actionBar = getSupportActionBar();
@@ -76,9 +118,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setupDrawer() {
-        String[] drawerItems = {"Settings", "About Us", "Contact Us"};
-        drawerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, drawerItems);
-        navList.setAdapter(drawerAdapter);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
 
@@ -101,5 +140,10 @@ public class MainActivity extends ActionBarActivity {
 
         drawerToggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(drawerToggle);
+    }
+
+    private void checkHasLogin() {
+        int userId = sharedPrefs.getInt(Constants.SHARED_PREFS_UID, -1);
+        hasLogin  = (userId != -1);
     }
 }

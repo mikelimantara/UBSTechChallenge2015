@@ -1,16 +1,20 @@
 <resources>
     <string name="app_name">Elite Bank</string>
+    
+    <!-- Navigation drawer -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    
+    <!-- Button -->
+    <string name="btn_login">Login</string>
 
     <!-- Login page -->
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="hint_username">Enter your username</string>
     <string name="hint_password">Enter your password</string>
-
-    <!-- Navigation drawer -->
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
-
-    <!-- Button -->
-    <string name="btn_login">Login</string>
+    
+    <!-- Overview page -->
+    <string name="overview_financial">Financial Overview</string>
+    <string name="overview_portfolio">Portfolio Holdings</string>
 </resources>
