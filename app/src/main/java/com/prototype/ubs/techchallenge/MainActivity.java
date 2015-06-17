@@ -48,6 +48,8 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                 return;
             }
 
+            checkHasLogin();
+
             if (hasLogin) {
                 Log.d("session", "login ady");
                 String[] drawerItems = {"Something", "Something"};
@@ -55,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                 setupDrawer();
                 OverviewFragment overviewFragment = new OverviewFragment();
                 getSupportFragmentManager()
-                        .beginTransaction().add(R.id.content_container, overviewFragment)
+                        .beginTransaction().replace(R.id.content_container, overviewFragment)
                         .commit();
             } else {
                 Log.d("session", "not login ady");
@@ -73,6 +75,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     @Override
     protected void onStart() {
         super.onStart();
+
 
     }
 
@@ -142,6 +145,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         drawerLayout.setDrawerListener(drawerToggle);
     }
 
+    //TODO: Communicate with server
     private void checkHasLogin() {
         int userId = sharedPrefs.getInt(Constants.SHARED_PREFS_UID, -1);
         hasLogin  = (userId != -1);
