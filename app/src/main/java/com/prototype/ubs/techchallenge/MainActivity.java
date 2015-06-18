@@ -51,33 +51,31 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                 return;
             }
 
-            checkHasLogin();
+            // checkHasLogin();
 
-            if (hasLogin) {
-                String[] drawerItems = {"Transaction History", "Market News"};
-                setNavigationDrawerItems(drawerItems);
-                setupDrawer();
-                OverviewFragment overviewFragment = new OverviewFragment();
-                getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.content_container, overviewFragment)
-                        .commit();
-            } else {
-                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
-                setNavigationDrawerItems(drawerItems);
-                setupDrawer();
-                LoginFragment loginFragment = new LoginFragment();
-                getSupportFragmentManager()
-                        .beginTransaction().add(R.id.content_container, loginFragment)
-                        .commit();
-            }
+//            if (hasLogin) {
+            String[] drawerItems = {"Transaction History", "Market News"};
+            setNavigationDrawerItems(drawerItems);
+            setupDrawer();
+            OverviewFragment overviewFragment = new OverviewFragment();
+            getSupportFragmentManager()
+                    .beginTransaction().replace(R.id.content_container, overviewFragment)
+                    .commit();
+//            } else {
+//                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
+//                setNavigationDrawerItems(drawerItems);
+//                setupDrawer();
+//                LoginFragment loginFragment = new LoginFragment();
+//                getSupportFragmentManager()
+//                        .beginTransaction().add(R.id.content_container, loginFragment)
+//                        .commit();
+//            }
         }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-
     }
 
     @Override
@@ -160,12 +158,14 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, transactionHistoryFragment);
             transaction.commit();
+            drawerLayout.closeDrawer(navList);
         }
         else if (position == 1) {
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);
             transaction.commit();
+            drawerLayout.closeDrawer(navList);
         }
     }
 }
