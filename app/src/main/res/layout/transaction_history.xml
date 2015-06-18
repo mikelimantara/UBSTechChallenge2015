@@ -38,6 +38,12 @@
         android:id="@+id/radioButton3"
         android:checked="false" />
 
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:spinnerMode="dropdown" />
+
     <TabHost
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,44 +59,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:touchscreenBlocksFocus="false"></TabWidget>
+                android:touchscreenBlocksFocus="false">
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:id="@+id/tab1"
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Transaction History"
-                    android:orientation="vertical"></LinearLayout>
+                    android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Order Status"
-                    android:orientation="vertical"></LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Transaction History"
+                        android:orientation="vertical"></LinearLayout>
 
-            </FrameLayout>
+                    <LinearLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Order Status"
+                        android:orientation="vertical"></LinearLayout>
+
+                </FrameLayout>
+            </TabWidget>
         </LinearLayout>
     </TabHost>
-
-    <Spinner
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:spinnerMode="dropdown" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_gravity="center_horizontal" />
 
     <ExpandableListView
         android:layout_width="match_parent"

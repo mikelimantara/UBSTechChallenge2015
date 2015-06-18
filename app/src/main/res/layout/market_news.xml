@@ -3,55 +3,55 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TabHost
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tabHost2"
-        android:layout_gravity="center_horizontal">
+    <!--<TabHost-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/tabHost2"-->
+        <!--android:layout_gravity="center_horizontal">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
 
-            <TabWidget
-                android:id="@android:id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+            <!--<TabWidget-->
+                <!--android:id="@android:id/tabs"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"></TabWidget>-->
 
-            <FrameLayout
-                android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <!--<FrameLayout-->
+                <!--android:id="@android:id/tabcontent"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
 
-                <LinearLayout
-                    android:id="@+id/mynews"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/mynews"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/marketindices"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/marketindices"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/foreignexchange"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/foreignexchange"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical"></LinearLayout>-->
 
-                <LinearLayout
-                    android:id="@+id/keycommodities"
-                    android:text="yeay"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"></LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/keycommodities"-->
+                    <!--android:text="yeay"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"></LinearLayout>-->
 
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
+            <!--</FrameLayout>-->
+        <!--</LinearLayout>-->
+    <!--</TabHost>-->
 
     <LinearLayout
         android:orientation="horizontal"
