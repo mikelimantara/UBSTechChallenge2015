@@ -22,6 +22,8 @@ import com.prototype.ubs.techchallenge.fragment.OverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
 import com.prototype.ubs.techchallenge.utils.Constants;
 
+import java.util.List;
+
 /**
  * Created by Michael on 10/6/2015.
  */
@@ -154,13 +156,14 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0) {
+            actionBar.removeAllTabs();
             TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, transactionHistoryFragment);
             transaction.commit();
             drawerLayout.closeDrawer(navList);
-        }
-        else if (position == 1) {
+        } else if (position == 1) {
+            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);

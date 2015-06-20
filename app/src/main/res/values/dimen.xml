@@ -11,11 +11,17 @@
     <dimen name="login_input_text_fontsize">15sp</dimen>
 
     <!-- Main content -->
-    <dimen name="content_margin">25dp</dimen>
+    <dimen name="content_margin">20dp</dimen>
 
     <!-- Overview -->
     <dimen name="overview_welcome_msg_fontsize">15sp</dimen>
     <dimen name="overview_welcome_msg_padding">2dp</dimen>
     <dimen name="overview_heading_fontsize">25sp</dimen>
+
+    <!-- Transaction history -->
+    <dimen name="listview_padding">10dp</dimen>
+    <dimen name="transaction_item_title_padding">5dp</dimen>
+    <dimen name="transaction_item_content_padding">5dp</dimen>
+    <dimen name="transaction_detail_row_padding">10dp</dimen>
 
 </resources>

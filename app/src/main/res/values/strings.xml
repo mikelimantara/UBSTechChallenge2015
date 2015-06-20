@@ -18,6 +18,15 @@
     <string name="overview_financial">Financial Overview</string>
     <string name="overview_portfolio">Portfolio Holdings</string>
 
+    <!-- Transaction History -->
+    <string name="transaction_detail_reference_no">Transaction Reference No.</string>
+    <string name="transaction_detail_investment_account">Investment Account</string>
+    <string name="transaction_detail_description">Description</string>
+    <string name="transaction_detail_order_amount">Order Amount</string>
+    <string name="transaction_detail_settled_amount">Settled Amount</string>
+    <string name="transaction_detail_realized_gain">Realised gain/loss</string>
+
+
     <!-- Market News -->
     <string name="american_news">American News</string>
     <string name="asian_news">Asian News</string>
