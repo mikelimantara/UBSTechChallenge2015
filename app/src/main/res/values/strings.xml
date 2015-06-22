@@ -46,4 +46,16 @@
     <string name="pop_up_investment_three_year_performance">3-Year Performance </string>
     <string name="pop_up_investment_dividend_yield">Dividend Yield </string>
     <string name="pop_up_investment_risk_level">Risk Level</string>
+
+    <!-- Market News -->
+    <string name="american_news">American News</string>
+    <string name="asian_news">Asian News</string>
+    <string name="european_news">European News</string>
+    <string name="filter_by">Filter by:</string>
+    <string-array name="news_titles">
+        <item>Aberdeen</item>
+        <item>DBS</item>
+        <item>Deutsche Bank</item>
+        <item>Bank Indonesia</item>
+    </string-array>
 </resources>

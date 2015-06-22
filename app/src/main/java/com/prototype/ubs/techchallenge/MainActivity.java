@@ -12,17 +12,20 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
+import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
 import com.prototype.ubs.techchallenge.fragment.OverviewFragment;
+import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
 import com.prototype.ubs.techchallenge.utils.Constants;
 
 /**
  * Created by Michael on 10/6/2015.
  */
-public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener {
+public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener, AdapterView.OnItemClickListener {
 
     private ActionBar actionBar = null;
     private ListView navList = null;
@@ -48,33 +51,31 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                 return;
             }
 
-            if (hasLogin) {
-                Log.d("session", "login ady");
-                String[] drawerItems = {"Something", "Something"};
-                setNavigationDrawerItems(drawerItems);
-                setupDrawer();
-                OverviewFragment overviewFragment = new OverviewFragment();
-                getSupportFragmentManager()
-                        .beginTransaction().add(R.id.content_container, overviewFragment)
-                        .commit();
-            } else {
-                Log.d("session", "not login ady");
-                String[] drawerItems = {"My Portfolio", "Asset allocation", "Transaction history", "Market News", "My News",
-                        "Market Indices", "Foreign exchange", "Key Commodities", "Realised gain/loss", "Settings", "About Us", "Contact Us"};
-                setNavigationDrawerItems(drawerItems);
-                setupDrawer();
-                LoginFragment loginFragment = new LoginFragment();
-                getSupportFragmentManager()
-                        .beginTransaction().add(R.id.content_container, loginFragment)
-                        .commit();
-            }
+            // checkHasLogin();
+
+//            if (hasLogin) {
+            String[] drawerItems = {"Transaction History", "Market News"};
+            setNavigationDrawerItems(drawerItems);
+            setupDrawer();
+            OverviewFragment overviewFragment = new OverviewFragment();
+            getSupportFragmentManager()
+                    .beginTransaction().replace(R.id.content_container, overviewFragment)
+                    .commit();
+//            } else {
+//                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
+//                setNavigationDrawerItems(drawerItems);
+//                setupDrawer();
+//                LoginFragment loginFragment = new LoginFragment();
+//                getSupportFragmentManager()
+//                        .beginTransaction().add(R.id.content_container, loginFragment)
+//                        .commit();
+//            }
         }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     @Override
@@ -116,6 +117,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         navList = (ListView) findViewById(R.id.nav_list);
         actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navList.setOnItemClickListener(this);
     }
 
     private void setupDrawer() {
@@ -143,8 +145,27 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         drawerLayout.setDrawerListener(drawerToggle);
     }
 
+    //TODO: Communicate with server
     private void checkHasLogin() {
         int userId = sharedPrefs.getInt(Constants.SHARED_PREFS_UID, -1);
         hasLogin  = (userId != -1);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (position == 0) {
+            TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content_container, transactionHistoryFragment);
+            transaction.commit();
+            drawerLayout.closeDrawer(navList);
+        }
+        else if (position == 1) {
+            MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content_container, marketNewsFragment);
+            transaction.commit();
+            drawerLayout.closeDrawer(navList);
+        }
     }
 }
