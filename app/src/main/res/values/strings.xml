@@ -1,4 +1,4 @@
-<resources>
+<>
     <string name="app_name">Elite Bank</string>
     
     <!-- Navigation drawer -->
@@ -15,6 +15,35 @@
     <string name="hint_password">Enter your password</string>
     
     <!-- Overview page -->
-    <string name="overview_financial">Financial Overview</string>
-    <string name="overview_portfolio">Portfolio Holdings</string>
+    <string name="overview_total_asset_value">Total Asset Value</string>
+    <string name="change_currency">Change Currency</string>
+    <string name="overview_myholdings_heading">My Holdings</string>
+    <string name="overview_asset_value_heading">Asset Value</string>
+    <string name="overview_investment">Investments</string>
+    <string name="overview_cash_deposit">Cash / Deposits</string>
+    <string name="overview_insurance">Insurance</string>
+    <string name="overview_other_assets">Other Assets</string>
+    <string name="cash_deposit_market_value">Market Value</string>
+    <string name="insurance_policy_value">Policy Value</string>
+    <string name="insurance_premium_paid_to_date">Premium Paid To Date</string>
+    <string name="insurance_others">Others</string>
+    <string name="insurance_sum_insured">Sum Insured</string>
+    <string name="latest_updated_time">Updated as of </string>
+
+    <!-- Investment page -->
+    <string name="market_price">Market Price</string>
+    <string name="book_cost">Book Cost</string>
+    <string name="portfolio_investment_heading">My Investment</string>
+    <string name="portfolio_investment_unrealised_capital">Unrealised Gain/Loss</string>
+    <string name="portfolio_investment_market_value">Market Value</string>
+
+    <!-- Pop Up Investment page -->
+    <string name="pop_up_investment_launch_date">Launch date:</string>
+    <string name="pop_up_investment_current_value">Current Value per Unit </string>
+    <string name="pop_up_investment_six_month_change">6-month Change </string>
+    <string name="pop_up_investment_yesterday_performance">Ytd Performance </string>
+    <string name="pop_up_investment_one_year_performance">1-Year Performance</string>
+    <string name="pop_up_investment_three_year_performance">3-Year Performance </string>
+    <string name="pop_up_investment_dividend_yield">Dividend Yield </string>
+    <string name="pop_up_investment_risk_level">Risk Level</string>
 </resources>

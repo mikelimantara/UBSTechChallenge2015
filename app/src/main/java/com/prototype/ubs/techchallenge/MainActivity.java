@@ -59,7 +59,8 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                         .commit();
             } else {
                 Log.d("session", "not login ady");
-                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
+                String[] drawerItems = {"My Portfolio", "Asset allocation", "Transaction history", "Market News", "My News",
+                        "Market Indices", "Foreign exchange", "Key Commodities", "Realised gain/loss", "Settings", "About Us", "Contact Us"};
                 setNavigationDrawerItems(drawerItems);
                 setupDrawer();
                 LoginFragment loginFragment = new LoginFragment();

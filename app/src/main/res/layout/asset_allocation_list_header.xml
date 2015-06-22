@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:padding="@dimen/asset_allocation_expandable_list_header_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fund"
+        android:id="@+id/asset_allocation_expandable_list_header"
+        android:layout_weight="0.5"
+        android:textSize="@dimen/asset_allocation_expandable_list_header_fontsize"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26%"
+        android:id="@+id/asset_allocation_expandable_list_header_percentage"
+        android:layout_weight="0.5"
+        android:textSize="@dimen/asset_allocation_expandable_list_header_fontsize"
+        android:textStyle="bold"
+        android:gravity="right"/>
+</LinearLayout>

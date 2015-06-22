@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/overview_list_padding">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/investment_type"
+            android:textSize="@dimen/overview_list_content_fontsize"
+            android:text="Equity"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$ xxx,xxx,xxx.xx"
+            android:textSize="@dimen/overview_list_content_fontsize"
+            android:id="@+id/overview_holdings_value"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="+xx.xx% |"
+            android:gravity="right"
+            android:id="@+id/investment_type_unrealised_capital_percentage"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="+ $xxx,xxx.xx"
+            android:gravity="right"
+            android:id="@+id/investment_type_unrealised_capital_value"/>
+
+    </LinearLayout>
+
+</LinearLayout>
