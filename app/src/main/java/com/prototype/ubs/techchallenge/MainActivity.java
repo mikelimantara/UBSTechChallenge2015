@@ -1,6 +1,7 @@
 package com.prototype.ubs.techchallenge;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -84,12 +85,14 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
+        Log.d("action bar", "post create, sync!");
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
+        Log.d("action bar", "configuration");
     }
 
     @Override
@@ -156,12 +159,12 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0) {
-            actionBar.removeAllTabs();
             TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, transactionHistoryFragment);
             transaction.commit();
             drawerLayout.closeDrawer(navList);
+            actionBar.setTitle("Transaction History");
         } else if (position == 1) {
             actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();

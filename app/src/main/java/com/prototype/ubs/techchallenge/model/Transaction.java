@@ -1,11 +1,15 @@
 package com.prototype.ubs.techchallenge.model;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.DateTimeFormatterBuilder;
+
 /**
  * Created by Michael on 19/6/2015.
  */
-public class Transaction {
+public class Transaction implements Comparable<Transaction> {
     private String transactionRef;
-    private String transactionDate;
+    private DateTime transactionDate;
     private String accountName;
     private String accountNo;
     private String description;
@@ -22,11 +26,11 @@ public class Transaction {
         this.transactionRef = transactionRef;
     }
 
-    public String getTransactionDate() {
+    public DateTime getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(String transactionDate) {
+    public void setTransactionDate(DateTime transactionDate) {
         this.transactionDate = transactionDate;
     }
 
@@ -84,5 +88,65 @@ public class Transaction {
 
     public void setAccountNo(String accountNo) {
         this.accountNo = accountNo;
+    }
+
+    @Override
+    public int compareTo(Transaction other) {
+        DateTime otherDate = other.getTransactionDate();
+
+        if (transactionDate.getYear() > otherDate.getYear()) {
+            return -1;
+        } else if (transactionDate.getYear() < otherDate.getYear()) {
+            return 1;
+        }
+
+        if (transactionDate.getMonthOfYear() > otherDate.getMonthOfYear()) {
+            return -1;
+        } else if (transactionDate.getMonthOfYear() < otherDate.getMonthOfYear()) {
+            return 1;
+        }
+
+        if (transactionDate.getDayOfMonth() > otherDate.getDayOfMonth()) {
+            return -1;
+        } else if (transactionDate.getDayOfMonth() < otherDate.getDayOfMonth()) {
+            return 1;
+        }
+
+        if (transactionDate.getHourOfDay() > otherDate.getHourOfDay()) {
+            return -1;
+        } else if (transactionDate.getHourOfDay() < otherDate.getHourOfDay()) {
+            return 1;
+        }
+
+        if (transactionDate.getMinuteOfDay() > otherDate.getMinuteOfDay()) {
+            return -1;
+        } else if (transactionDate.getMinuteOfDay() < otherDate.getMinuteOfDay()) {
+            return 1;
+        }
+
+        if (transactionDate.getSecondOfDay() > otherDate.getSecondOfDay()) {
+            return -1;
+        } else if (transactionDate.getSecondOfDay() < otherDate.getSecondOfDay()) {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    public String getStringDate() {
+        DateTimeFormatter format = new DateTimeFormatterBuilder().appendDayOfMonth(2)
+                .appendLiteral(' ')
+                .appendMonthOfYearShortText()
+                .appendLiteral(' ')
+                .appendYear(4,4)
+                .appendLiteral(' ')
+                .appendClockhourOfDay(2)
+                .appendLiteral(':')
+                .appendMinuteOfHour(2)
+                .appendLiteral(' ')
+                .appendHalfdayOfDayText()
+                .toFormatter();
+
+        return transactionDate.toString(format);
     }
 }

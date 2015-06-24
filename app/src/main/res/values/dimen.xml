@@ -22,6 +22,11 @@
     <dimen name="listview_padding">10dp</dimen>
     <dimen name="transaction_item_title_padding">5dp</dimen>
     <dimen name="transaction_item_content_padding">5dp</dimen>
-    <dimen name="transaction_detail_row_padding">10dp</dimen>
+    <dimen name="transaction_detail_label_fontsize">15sp</dimen>
+    <dimen name="transaction_detail_label_height">30dp</dimen>
+    <dimen name="transaction_detail_content_fontsize">15sp</dimen>
+    <dimen name="transaction_detail_content_marginleft">15dp</dimen>
+    <dimen name="transaction_detail_amount_marginleft">5dp</dimen>
+    <dimen name="transaction_detail_dollar_sign_marginleft">40dp</dimen>
 
 </resources>

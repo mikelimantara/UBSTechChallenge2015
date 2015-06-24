@@ -1,36 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <TableLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/content_margin">
 
-        <TableRow
+        <TextView
+            android:id="@+id/transaction_history_detail_account_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:text="ABERDEEN Pte Ltd"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/transaction_history_detail_date"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25 May 2015"
+            android:textSize="@dimen/transaction_detail_label_fontsize"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:layout_marginTop="10dp"
+            android:text="@string/transaction_detail_reference_no"
+            style="@style/transaction_detail_label"/>
+
+        <TextView
+            android:id="@+id/transaction_history_detail_ref_no"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:text="ASDFASDFASDF"
+            style="@style/transaction_detail_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:text="@string/transaction_detail_investment_account"
+            style="@style/transaction_detail_label"/>
+
+        <TextView
+            android:id="@+id/transaction_history_detail_account"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:text="ASDFASDFASDF"
+            style="@style/transaction_detail_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:text="@string/transaction_detail_description"
+            style="@style/transaction_detail_label"/>
+
+        <TextView
+            android:id="@+id/transaction_history_detail_description"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/transaction_detail_label_height"
+            android:text="ASDFASDFASDF"
+            style="@style/transaction_detail_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/transaction_detail_row_padding">
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/transaction_detail_reference_no"
-                    android:textSize="15sp"/>
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:text="@string/transaction_detail_order_amount"
+                    style="@style/transaction_detail_label"/>
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ASDF"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:text="@string/transaction_detail_settled_amount"
+                    style="@style/transaction_detail_label"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:text="@string/transaction_detail_realized_gain"
+                    style="@style/transaction_detail_label"/>
 
             </LinearLayout>
-        </TableRow>
 
-    </TableLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_dollar_sign_marginleft"
+                    android:text="$"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_dollar_sign_marginleft"
+                    android:text="$"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_dollar_sign_marginleft"
+                    android:text="$"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:id="@+id/transaction_history_detail_order_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_amount_marginleft"
+                    android:text="1000000"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical|right"/>
+
+                <TextView
+                    android:id="@+id/transaction_history_detail_settled_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_amount_marginleft"
+                    android:text="10"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical|right"/>
+
+                <TextView
+                    android:id="@+id/transaction_history_detail_realized_gain_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_amount_marginleft"
+                    android:text="1000000"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical|right"/>
+
+                <TextView
+                    android:id="@+id/transaction_history_detail_realized_gain_percentage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/transaction_detail_label_height"
+                    android:layout_marginLeft="@dimen/transaction_detail_amount_marginleft"
+                    android:text="2.61%"
+                    android:textSize="@dimen/transaction_detail_content_fontsize"
+                    android:gravity="center_vertical|right"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_back_transaction_history_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/btn_back"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</ScrollView>
