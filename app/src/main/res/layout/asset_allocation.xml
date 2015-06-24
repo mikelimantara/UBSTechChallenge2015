@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/asset_allocation_pie_chart_padding">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="Pie Chart"
+            android:gravity="center"/>
+    </FrameLayout>
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="394dp"
+        android:id="@+id/expandableListView"
+        android:padding="@dimen/asset_allocation_pie_chart_padding"/>
+
+
+</LinearLayout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30sp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Market Name"
+        android:textSize="@dimen/pop_up_investment_heading_fontsize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:id="@+id/investment_market_name" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_launch_date"
+            android:textSize="@dimen/investment_launch_date_fontsize"
+            android:layout_weight="0.5"
+            android:paddingRight="5sp"
+            android:gravity="right"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="20th June 2009"
+            android:id="@+id/investment_launch_date"
+            android:textSize="@dimen/investment_launch_date_fontsize"
+            android:gravity="left"
+            android:paddingLeft="5sp"
+            android:layout_weight="0.5"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pop_up_investment_content_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_current_value"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SGD "
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:id="@+id/investment_currency" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ xxx,xxx.xx"
+            android:gravity="right"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:id="@+id/investment_current_value" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_six_month_change"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ xx.x% | "
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:id="@+id/investment_six_month_change_percentage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ xxx,xxx"
+            android:gravity="right"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:id="@+id/investment_six_month_change_value" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_yesterday_performance"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ xx.x%"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:id="@+id/investment_yesterday_performance_percentage" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_one_year_performance"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ xx.x%"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:id="@+id/investment_one_year_performance_percentage" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_three_year_performance"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ xx.x%"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:id="@+id/investment_three_year_performance_percentage" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pop_up_investment_content_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_dividend_yield"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20.00%"
+            android:gravity="right"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:id="@+id/investment_dividend_yield" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pop_up_investment_content_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pop_up_investment_risk_level"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:layout_weight="0.5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:gravity="right"
+            android:textSize="@dimen/pop_up_investment_content_fontsize"
+            android:textStyle="bold"
+            android:id="@+id/investment_risk_level" />
+
+    </LinearLayout>
+
+</LinearLayout>

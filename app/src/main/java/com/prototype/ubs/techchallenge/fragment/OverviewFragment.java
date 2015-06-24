@@ -17,14 +17,11 @@ import com.prototype.ubs.techchallenge.utils.Constants;
  */
 public class OverviewFragment extends Fragment {
     private View v = null;
-    private TextView txtName = null;
-    private TextView txtLastLogin = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.overview, container, false);
         initViews();
-        setWelcomeMessage();
 
         return v;
     }
@@ -37,20 +34,11 @@ public class OverviewFragment extends Fragment {
     }
 
     private void initViews() {
-        txtName = (TextView) v.findViewById(R.id.overview_name);
-        txtLastLogin = (TextView) v.findViewById(R.id.overview_last_login);
+
     }
 
     private void setTitleOnActionBar() {
         ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         actionBar.setTitle("MY PORTFOLIO - OVERVIEW");
     }
-
-    private void setWelcomeMessage() {
-        //TODO: Include real name and last login to the welcome message
-        txtName.setText(Constants.MSG_NAME);
-        txtLastLogin.setText(Constants.MSG_LAST_LOGIN);
-    }
-
-
 }

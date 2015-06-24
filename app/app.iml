@@ -88,12 +88,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="google-http-client-1.19.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
-    <orderEntry type="library" exported="" name="jackson-core-2.1.3" level="project" />
-    <orderEntry type="library" exported="" name="backend-android-endpoints" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.1.1" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" exported="" name="jsr305-1.3.9" level="project" />
     <orderEntry type="library" exported="" name="joda-time-2.7" level="project" />
     <orderEntry type="library" exported="" name="google-http-client-jackson2-1.19.0" level="project" />
@@ -102,5 +98,9 @@
     <orderEntry type="library" exported="" name="google-api-client-android-1.19.0" level="project" />
     <orderEntry type="library" exported="" name="guava-jdk5-13.0" level="project" />
     <orderEntry type="library" exported="" name="google-api-client-1.19.0" level="project" />
+=======
+    <orderEntry type="library" exported="" name="support-v4-22.1.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.1.1" level="project" />
+>>>>>>> 77020bd8f7728428e473dd50aa8b7ba104893b08
   </component>
 </module>
