@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/contact_us_icon_padding">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:id="@+id/contact_us_call_manager_icon"
+                android:src="@drawable/contact_us_call_manager"
+                android:layout_gravity="right"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Call your wealth manager"
+            android:id="@+id/contact_us_call_manager_text"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:padding="@dimen/contact_us_text_padding"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/contact_us_icon_padding">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:id="@+id/contact_us_email_manager_icon"
+                android:src="@drawable/contact_us_email"
+                android:layout_gravity="right" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Email your wealth manager"
+            android:id="@+id/contact_us_email_manager_text"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:padding="@dimen/contact_us_text_padding"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/contact_us_icon_padding">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:src="@drawable/contact_us_book_appointment"
+                android:id="@+id/contact_us_book_appointment_icon"
+                android:layout_gravity="right"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Book an appointment"
+            android:id="@+id/contact_us_book_appointment_text"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:padding="@dimen/contact_us_text_padding"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/contact_us_icon_padding">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:id="@+id/contact_us_call_24_hour_support_icon"
+                android:src="@drawable/contact_us_24_Hour_Support"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Call our 24-hr customer support"
+            android:id="@+id/contact_us_call_24_hour_support_text"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:padding="@dimen/contact_us_text_padding"/>
+    </LinearLayout>
 
 </LinearLayout>
