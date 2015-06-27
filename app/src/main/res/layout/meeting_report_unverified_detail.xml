@@ -1,137 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/meeting_reports_padding">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom">
+        android:padding="@dimen/meeting_reports_padding">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date and Time"
-            android:textStyle="bold"
-            android:layout_weight="0.5"/>
+            android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="30th June 2015 14:10"
-            android:id="@+id/meeting_report_date_and_time"
-            android:layout_weight="0.5"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom" >
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Written by"
-            android:textStyle="bold"
-            android:layout_weight="0.5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Your wealth manager"
-            android:id="@+id/meeting_report_writer"
-            android:layout_weight="0.5"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom" >
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Status"
-            android:textStyle="bold"
-            android:layout_weight="0.5"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Unverified"
-            android:id="@+id/meeting_report_status"
-            android:layout_weight="0.5"/>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Discussion on possible assets buying in Eastern Europe"
-        android:id="@+id/meeting_reports_unverified_topic"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Summary:"
-        android:textStyle="italic|bold" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="128dp"
-        android:id="@+id/meeting_reports_summary" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Agreement:"
-        android:textStyle="bold|italic" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="169dp"
-        android:id="@+id/meeting_reports_agreement" />
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5">
-
-            <Button
-                android:layout_width="@dimen/meeting_reports_verification_button_size"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Verify"
-                android:textSize="@dimen/meeting_reports_verify_button_fontsize"
-                android:layout_gravity="right"
-                android:id="@+id/meeting_reports_verify_button" />
-        </FrameLayout>
+                android:text="Date and Time"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
 
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5">
-
-            <Button
-                android:layout_width="@dimen/meeting_reports_verification_button_size"
+            <TextView
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Request Edit"
-                android:textSize="@dimen/meeting_reports_verify_button_fontsize"
-                android:layout_gravity="left"
-                android:id="@+id/button3" />
-        </FrameLayout>
+                android:text="30th June 2015 14:10"
+                android:id="@+id/meeting_report_date_and_time"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Written by"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Your wealth manager"
+                android:id="@+id/meeting_report_writer"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/meeting_reports_detail_paddingBottom" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Unverified"
+                android:id="@+id/meeting_report_status"
+                android:layout_weight="0.5"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discussion on possible assets buying in Eastern Europe"
+            android:id="@+id/meeting_reports_unverified_topic"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Summary:"
+            android:textStyle="italic|bold" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/meeting_reports_summary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agreement:"
+            android:textStyle="bold|italic" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/meeting_reports_agreement" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <Button
+                    android:layout_width="@dimen/meeting_reports_verification_button_size"
+                    android:layout_height="wrap_content"
+                    android:text="Verify"
+                    android:textSize="@dimen/meeting_reports_verify_button_fontsize"
+                    android:layout_gravity="right"
+                    android:id="@+id/meeting_reports_verify_button" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <Button
+                    android:layout_width="@dimen/meeting_reports_verification_button_size"
+                    android:layout_height="wrap_content"
+                    android:text="Request Edit"
+                    android:textSize="@dimen/meeting_reports_verify_button_fontsize"
+                    android:layout_gravity="left"
+                    android:id="@+id/meeting_reports_request_edit_button" />
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
+</ScrollView>
 
-
-</LinearLayout>

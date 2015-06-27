@@ -21,8 +21,10 @@ import android.widget.ListView;
 import com.prototype.ubs.techchallenge.fragment.AssetAllocationFragment;
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
+import com.prototype.ubs.techchallenge.fragment.MeetingReportFragment;
 import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
+import com.prototype.ubs.techchallenge.model.MeetingReport;
 import com.prototype.ubs.techchallenge.model.Portfolio;
 import com.prototype.ubs.techchallenge.utils.Constants;
 
@@ -65,7 +67,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             // checkHasLogin();
 
 //            if (hasLogin) {
-            String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History", "Market News"};
+            String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History", "Meeting Reports", "Market News"};
             setNavigationDrawerItems(drawerItems);
             setupDrawer();
             PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
@@ -211,7 +213,12 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             drawerLayout.closeDrawer(navList);
             actionBar.setTitle("Transaction History");
         } else if (position == 3) {
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+            MeetingReportFragment meetingReportFragment = new MeetingReportFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content_container, meetingReportFragment);
+            transaction.commit();
+            drawerLayout.closeDrawer(navList);
+        } else if (position == 4) {
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);

@@ -107,7 +107,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="right"
                 android:id="@+id/contact_us_call_24_hour_support_icon"
-                android:src="@drawable/contact_us_24_Hour_Support"/>
+                android:src="@drawable/contact_us_24_hour_support"/>
         </FrameLayout>
 
         <TextView
