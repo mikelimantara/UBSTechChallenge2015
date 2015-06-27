@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:elite-bank="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/menu_contact_advisor"
-        android:icon="@mipmap/ic_launcher"
-        android:title="@string/menu_contact_advisor"
+    <item android:id="@+id/menu_filter"
+        android:icon="@drawable/filter_action_bar"
+        android:title="@string/menu_filter"
         elite-bank:showAsAction="always"/>
 
-    <item android:id="@+id/menu_filter"
-        android:icon="@mipmap/ic_launcher"
+    <item android:id="@+id/menu_contact_advisor"
+        android:icon="@drawable/contact_us_action_bar"
         android:title="@string/menu_contact_advisor"
         elite-bank:showAsAction="always"/>
 

@@ -4,6 +4,7 @@
 
     <!-- Menu bar -->
     <string name="menu_contact_advisor">Contact Advisor</string>
+    <string name="menu_filter">Filter</string>
     
     <!-- Navigation drawer -->
     <string name="drawer_open">Open navigation drawer</string>
