@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/asset_allocation_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="@dimen/asset_allocation_pie_chart_padding"
+            android:paddingRight="@dimen/asset_allocation_pie_chart_padding"
+            android:paddingTop="@dimen/asset_allocation_pie_chart_padding">
+
+            <ImageView
+                android:id="@+id/asset_allocation_piechart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/panel_background"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <ExpandableListView
+            android:layout_width="match_parent"
+            android:layout_height="1500dp"
+            android:id="@+id/asset_allocation_list"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/asset_allocation_pie_chart_padding"
+            android:paddingRight="@dimen/asset_allocation_pie_chart_padding"/>
+
+    </LinearLayout>
+
+</ScrollView>
+
+

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Elite Bank</string>
     
@@ -7,6 +8,7 @@
     
     <!-- Button -->
     <string name="btn_login">Login</string>
+    <string name="btn_back">Back</string>
 
     <!-- Login page -->
     <string name="username">Username</string>
@@ -31,7 +33,7 @@
     <string name="latest_updated_time">Updated as of </string>
 
     <!-- Investment page -->
-    <string name="market_price">Market Price</string>
+    <string name="market_value">Market Value</string>
     <string name="book_cost">Book Cost</string>
     <string name="portfolio_investment_heading">My Investment</string>
     <string name="portfolio_investment_unrealised_capital">Unrealised Gain/Loss</string>
@@ -46,6 +48,14 @@
     <string name="pop_up_investment_three_year_performance">3-Year Performance </string>
     <string name="pop_up_investment_dividend_yield">Dividend Yield </string>
     <string name="pop_up_investment_risk_level">Risk Level</string>
+
+    <!-- Transaction History -->
+    <string name="transaction_detail_reference_no">Transaction Reference No.</string>
+    <string name="transaction_detail_investment_account">Investment Account</string>
+    <string name="transaction_detail_description">Description</string>
+    <string name="transaction_detail_order_amount">Order Amount</string>
+    <string name="transaction_detail_settled_amount">Settled Amount</string>
+    <string name="transaction_detail_realized_gain">Realised gain/loss</string>
 
     <!-- Market News -->
     <string name="american_news">American News</string>

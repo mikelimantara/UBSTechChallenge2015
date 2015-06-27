@@ -5,8 +5,9 @@
     android:layout_height="match_parent">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/asset_allocation_viewpager"
+        android:id="@+id/transaction_history_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/content_margin"/>
 
 </LinearLayout>
