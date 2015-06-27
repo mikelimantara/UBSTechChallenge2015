@@ -41,6 +41,21 @@
     <dimen name="asset_allocation_expandable_list_content_fontsize">15sp</dimen>
     <dimen name="asset_allocation_expandable_list_content_marginLeft">30dp</dimen>
 
+    <!-- Meeting Reports-->
+    <dimen name="meeting_reports_padding">20dp</dimen>
+    <dimen name="meeting_reports_category_fontsize">20dp</dimen>
+    <dimen name="meeting_reports_item_fontsize">17dp</dimen>
+    <dimen name="meeting_reports_verified_reports_marginTop">10dp</dimen>
+    <dimen name="meeting_reports_item_padding">10dp</dimen>
+    <dimen name="meeting_reports_item_inline_padding">2dp</dimen>
+    <dimen name="meeting_reports_item_marginLeft">15dp</dimen>
+    <dimen name="meeting_reports_tags_fontsize">10dp</dimen>
+    <dimen name="meeting_reports_verify_button_fontsize">13dp</dimen>
+    <dimen name="meeting_reports_detail_paddingBottom">5dp</dimen>
+    <dimen name="meeting_reports_verification_button_size">120dp</dimen>
+    <dimen name="meeting_reports_detail_bullet_marginLeft">25dp</dimen>
+    <dimen name="meeting_reports_bullet_size">5dp</dimen>
+
     <!-- Transaction history -->
     <dimen name="listview_padding">10dp</dimen>
     <dimen name="transaction_item_title_padding">5dp</dimen>
@@ -51,5 +66,9 @@
     <dimen name="transaction_detail_content_marginleft">15dp</dimen>
     <dimen name="transaction_detail_amount_marginleft">5dp</dimen>
     <dimen name="transaction_detail_dollar_sign_marginleft">40dp</dimen>
+
+    <!-- Contact Us -->
+    <dimen name="contact_us_icon_padding">10dp</dimen>
+    <dimen name="contact_us_text_padding">5dp</dimen>
 
 </resources>
