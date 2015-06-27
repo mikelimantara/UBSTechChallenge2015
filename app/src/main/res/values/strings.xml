@@ -33,7 +33,7 @@
     <string name="latest_updated_time">Updated as of </string>
 
     <!-- Investment page -->
-    <string name="market_price">Market Price</string>
+    <string name="market_value">Market Value</string>
     <string name="book_cost">Book Cost</string>
     <string name="portfolio_investment_heading">My Investment</string>
     <string name="portfolio_investment_unrealised_capital">Unrealised Gain/Loss</string>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/listview_padding"
-    android:background="@color/white">
+    android:background="@drawable/panel_background">
 
     <ImageView
         android:layout_width="25dp"

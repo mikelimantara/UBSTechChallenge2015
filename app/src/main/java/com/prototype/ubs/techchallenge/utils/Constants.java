@@ -8,6 +8,5 @@ public class Constants {
     public static final String SHARED_PREFS_UID = "user_id";
     public static final String SHARED_PREFS_NAME = "user_name";
     public static final String SHARED_PREFS_LAST_LOGIN = "user_last_login";
-    public static final String MSG_NAME = "Hi ";
-    public static final String MSG_LAST_LOGIN = "Your last login is at ";
+    public static final String[] CURRENCIES = {"SGD $","HK $","JPN ¥","TWD","AUD $"};
 }

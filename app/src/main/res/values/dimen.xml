@@ -11,33 +11,35 @@
     <dimen name="login_input_text_fontsize">15sp</dimen>
 
     <!-- Main content -->
-    <dimen name="content_margin">20dp</dimen>
+    <dimen name="content_margin">10dp</dimen>
 
     <!-- Portfolio Overview-->
-    <dimen name="overview_total_value_fontsize">17dp</dimen>
+    <dimen name="overview_total_value_fontsize">17sp</dimen>
     <dimen name="overview_total_value_padding">2dp</dimen>
-    <dimen name="change_currency_fontsize">15dp</dimen>
-    <dimen name="overview_table_heading_fontsize">17dp</dimen>
-    <dimen name="overview_list_content_fontsize">22dp</dimen>
+    <dimen name="overview_table_heading_fontsize">17sp</dimen>
+    <dimen name="overview_list_content_fontsize">18sp</dimen>
+    <dimen name="overview_list_subcontent_fontsize">15sp</dimen>
     <dimen name="overview_list_padding">20dp</dimen>
-    <dimen name="overview_unrealised_capital_fontsize">12dp</dimen>
+    <dimen name="overview_unrealised_capital_fontsize">12sp</dimen>
+    <dimen name="change_currency_fontsize">15sp</dimen>
+    <dimen name="change_currency_height">50dp</dimen>
 
     <!-- Portfolio Investment-->
-    <dimen name="portfolio_investment_heading_fontsize"> 17dp</dimen>
+    <dimen name="portfolio_investment_heading_fontsize"> 17sp</dimen>
     <dimen name="portfolio_investment_unrealised_capital_padding">5dp</dimen>
 
     <!-- Pop Up Investment Detail-->
-    <dimen name="pop_up_investment_heading_fontsize">25dp</dimen>
-    <dimen name="investment_launch_date_fontsize">15dp</dimen>
-    <dimen name="pop_up_investment_content_margin">15sp</dimen>
-    <dimen name="pop_up_investment_content_fontsize">17dp</dimen>
+    <dimen name="pop_up_investment_heading_fontsize">25sp</dimen>
+    <dimen name="investment_launch_date_fontsize">15sp</dimen>
+    <dimen name="pop_up_investment_content_margin">15dp</dimen>
+    <dimen name="pop_up_investment_content_fontsize">17sp</dimen>
 
     <!-- Asset Allocation-->
-    <dimen name="asset_allocation_pie_chart_padding">20sp</dimen>
+    <dimen name="asset_allocation_pie_chart_padding">20dp</dimen>
     <dimen name="asset_allocation_expandable_list_header_padding">15dp</dimen>
-    <dimen name="asset_allocation_expandable_list_header_fontsize">20dp</dimen>
-    <dimen name="asset_allocation_expandable_list_content_fontsize">18dp</dimen>
-    <dimen name="asset_allocation_expandable_list_content_marginLeft">15dp</dimen>
+    <dimen name="asset_allocation_expandable_list_header_fontsize">18sp</dimen>
+    <dimen name="asset_allocation_expandable_list_content_fontsize">15sp</dimen>
+    <dimen name="asset_allocation_expandable_list_content_marginLeft">30dp</dimen>
 
     <!-- Transaction history -->
     <dimen name="listview_padding">10dp</dimen>

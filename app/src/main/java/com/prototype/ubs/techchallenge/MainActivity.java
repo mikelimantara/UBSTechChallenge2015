@@ -1,7 +1,6 @@
 package com.prototype.ubs.techchallenge;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -17,18 +16,19 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.prototype.ubs.techchallenge.fragment.AssetAllocationFragment;
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
-import com.prototype.ubs.techchallenge.fragment.OverviewFragment;
+import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
+import com.prototype.ubs.techchallenge.model.Portfolio;
 import com.prototype.ubs.techchallenge.utils.Constants;
-
-import java.util.List;
 
 /**
  * Created by Michael on 10/6/2015.
  */
-public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener, AdapterView.OnItemClickListener {
+public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener,
+        AdapterView.OnItemClickListener {
 
     private ActionBar actionBar = null;
     private ListView navList = null;
@@ -37,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     private DrawerLayout drawerLayout = null;
     private SharedPreferences sharedPrefs = null;
     private boolean hasLogin = false;
+    private Portfolio portfolio = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +58,12 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             // checkHasLogin();
 
 //            if (hasLogin) {
-            String[] drawerItems = {"Transaction History", "Market News"};
+            String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History", "Market News"};
             setNavigationDrawerItems(drawerItems);
             setupDrawer();
-            OverviewFragment overviewFragment = new OverviewFragment();
+            PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
             getSupportFragmentManager()
-                    .beginTransaction().replace(R.id.content_container, overviewFragment)
+                    .beginTransaction().replace(R.id.content_container, portfolioOverviewFragment)
                     .commit();
 //            } else {
 //                String[] drawerItems = {"Settings", "About Us", "Contact Us"};
@@ -107,10 +108,14 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     // Callback method from loginFragment once login is successful
     @Override
     public void onLogin() {
-        OverviewFragment overviewFragment = new OverviewFragment();
+        PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content_container, overviewFragment);
+        transaction.replace(R.id.content_container, portfolioOverviewFragment);
         transaction.commit();
+    }
+
+    public void setPortfolio(Portfolio portfolio) {
+        this.portfolio = portfolio;
     }
 
     public void setNavigationDrawerItems(String[] items) {
@@ -159,13 +164,26 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0) {
+            PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_container, portfolioOverviewFragment)
+                    .commit();
+            drawerLayout.closeDrawer(navList);
+        } else if (position == 1) {
+            AssetAllocationFragment assetAllocationFragment = new AssetAllocationFragment();
+            assetAllocationFragment.setPortfolio(portfolio);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_container, assetAllocationFragment)
+                    .commit();
+            drawerLayout.closeDrawer(navList);
+        } else if (position == 2) {
             TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, transactionHistoryFragment);
             transaction.commit();
             drawerLayout.closeDrawer(navList);
             actionBar.setTitle("Transaction History");
-        } else if (position == 1) {
+        } else if (position == 3) {
             actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -174,4 +192,6 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             drawerLayout.closeDrawer(navList);
         }
     }
+
+
 }
