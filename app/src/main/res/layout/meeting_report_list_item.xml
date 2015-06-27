@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/meeting_reports_padding">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/meeting_reports_detail_bullet_marginLeft">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="@dimen/meeting_reports_bullet_size"
+                android:layout_height="@dimen/meeting_reports_bullet_size"
+                android:src="@drawable/bullet" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/meeting_reports_bullet_point_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

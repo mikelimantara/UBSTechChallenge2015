@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/meeting_reports_item_padding">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.75">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30/06/2015"
+            android:id="@+id/unverified_meeting_date"
+            android:textSize="@dimen/meeting_reports_item_fontsize"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discussion on possible assets buying in Eastern Europe and China"
+            android:id="@+id/meeting_reports_unverified_topic"
+            android:padding="@dimen/meeting_reports_item_inline_padding"
+            android:layout_marginLeft="@dimen/meeting_reports_item_marginLeft"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tags: "
+                android:padding="@dimen/meeting_reports_item_inline_padding"
+                android:textSize="@dimen/meeting_reports_tags_fontsize"
+                android:layout_marginLeft="@dimen/meeting_reports_item_marginLeft"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/meeting_reports_tags_fontsize"
+                android:text="assets"
+                android:id="@+id/meeting_reports_unverified_item_tag" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="Verify"
+            android:textSize="@dimen/meeting_reports_verify_button_fontsize"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/verify_meeting_reports_button" />
+    </LinearLayout>
+
+</LinearLayout>
