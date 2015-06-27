@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/filter_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Range"
+        android:textStyle="bold"
+        android:textSize="@dimen/filter_text_fontsize"
+        android:layout_gravity="left"
+        android:padding="@dimen/filter_text_padding"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="@dimen/filter_text_padding">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="From"
+            android:layout_weight="0.5"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Until"
+            android:layout_weight="0.5"
+            android:id="@+id/textView2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+
+            <EditText
+                android:layout_width="@dimen/filter_date_textfield_size"
+                android:layout_height="wrap_content"
+                android:hint="@string/filter_date"
+                android:textSize="@dimen/filter_text_fontsize"
+                android:id="@+id/transaction_history_filter_date_textfield_from" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_history_filter_calender_from" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+
+            <EditText
+                android:layout_width="@dimen/filter_date_textfield_size"
+                android:layout_height="wrap_content"
+                android:hint="@string/filter_date"
+                android:textSize="@dimen/filter_text_fontsize"
+                android:id="@+id/transaction_history_filter_date_textfield_to" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/transaction_history_filter_calender_to" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or"
+        android:padding="@dimen/filter_text_padding"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/spinner" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account"
+        android:textStyle="bold"
+        android:textSize="@dimen/filter_text_fontsize"
+        android:layout_gravity="left"
+        android:padding="@dimen/filter_text_padding"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:padding="@dimen/filter_button_padding">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Account-1"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_account1" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Account-2"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_account2" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Holdings"
+        android:textStyle="bold"
+        android:textSize="@dimen/filter_text_fontsize"
+        android:layout_gravity="left"
+        android:padding="@dimen/filter_text_padding"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:padding="@dimen/filter_button_padding">
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="Equity"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_equity" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="Bonds"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_bonds" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="Funds"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_funds" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="Other Assets"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_other_assets" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction Types"
+        android:textStyle="bold"
+        android:textSize="@dimen/filter_text_fontsize"
+        android:layout_gravity="left"
+        android:padding="@dimen/filter_text_padding"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left|center_vertical"
+        android:padding="@dimen/filter_button_padding">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buy"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_buy" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_sell" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_switch" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dividend"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_dividend" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:id="@+id/order_status_filter_button_split" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:id="@+id/filter_button_apply"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:layout_gravity="right" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:id="@+id/filter_button_reset"
+            android:textSize="@dimen/filter_text_fontsize"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</LinearLayout>
