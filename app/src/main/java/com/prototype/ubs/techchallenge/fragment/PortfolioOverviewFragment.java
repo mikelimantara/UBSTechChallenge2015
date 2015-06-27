@@ -59,11 +59,18 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
     private Portfolio portfolio;
     private NumberFormat currencyFormatter;
     private DecimalFormat percentageFormatter;
+    private ActionBar actionBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.portfolio_overview, container, false);
         initViews();
+
+        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+        hideTabsOnActionBar();
+        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
+        getActivity().invalidateOptionsMenu();
+
 
         currencyFormatter = NumberFormat.getCurrencyInstance();
         percentageFormatter = new DecimalFormat("###.## '%'");
@@ -114,9 +121,14 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
         otherAssetsLayout.setOnClickListener(this);
     }
 
+    private void hideTabsOnActionBar() {
+        actionBar.removeAllTabs();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+    }
+
     private void setTitleOnActionBar() {
         ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("MY PORTFOLIO - OVERVIEW");
+        actionBar.setTitle("My Portfolio");
     }
 
     private void setInitialData() {

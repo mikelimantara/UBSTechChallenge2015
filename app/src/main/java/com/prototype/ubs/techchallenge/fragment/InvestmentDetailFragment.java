@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.prototype.ubs.techchallenge.R;
@@ -21,7 +22,7 @@ import java.text.NumberFormat;
 /**
  * Created by Michael on 26/6/2015.
  */
-public class InvestmentDetailFragment extends Fragment {
+public class InvestmentDetailFragment extends Fragment implements View.OnClickListener {
     private View v;
     private TextView txtProductName;
     private TextView txtLaunchDate;
@@ -35,6 +36,7 @@ public class InvestmentDetailFragment extends Fragment {
     private Funds funds;
     private DecimalFormat percentageFormatter;
     private NumberFormat currencyFormatter;
+    private Button btnBack;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -113,5 +115,14 @@ public class InvestmentDetailFragment extends Fragment {
         txtThreeYearPerf = (TextView) v.findViewById(R.id.investment_three_year_performance_percentage);
         txtDividendYield = (TextView) v.findViewById(R.id.investment_dividend_yield);
         txtRiskLevel = (TextView) v.findViewById(R.id.investment_risk_level);
+        btnBack = (Button) v.findViewById(R.id.btn_back_investment_detail);
+        btnBack.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == btnBack) {
+            getActivity().getSupportFragmentManager().popBackStackImmediate();
+        }
     }
 }

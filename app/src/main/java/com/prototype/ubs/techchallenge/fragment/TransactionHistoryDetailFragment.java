@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.prototype.ubs.techchallenge.MainActivity;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.Transaction;
 
@@ -37,6 +38,9 @@ public class TransactionHistoryDetailFragment extends Fragment implements View.O
         hideTabsInActionBar();
         initViews();
         populateData();
+
+        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
+        getActivity().invalidateOptionsMenu();
 
         return v;
     }

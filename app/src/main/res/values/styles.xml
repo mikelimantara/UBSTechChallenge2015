@@ -1,7 +1,22 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionBarTab</item>
+    </style>
 
+    <style name="ActionBarTab" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:showDividers">middle</item>
+        <item name="android:dividerPadding">0dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- Back button in detail page -->
+    <style name="BackButton">
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:text">@string/btn_back</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
     <!-- Transaction History Detail -->
@@ -16,5 +31,11 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textSize">@dimen/transaction_detail_content_fontsize</item>
         <item name="android:layout_marginLeft">@dimen/transaction_detail_content_marginleft</item>
+    </style>
+
+    <style name="transaction_history_fiter_label">
+        <item name="android:padding">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

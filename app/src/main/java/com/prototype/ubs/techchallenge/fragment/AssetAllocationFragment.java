@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.prototype.ubs.techchallenge.R;
@@ -30,6 +32,7 @@ public class AssetAllocationFragment extends Fragment {
     private ExpandableListView assetAllocationList;
     private AssetAllocationListAdapter assetAllocationAdapter;
     private ImageView assetAllocationPieChart;
+    private ScrollView scrollView;
 
     private List<HashMap<String, List<AssetAllocation>>> assetAllocationCategories;
     private List<List<String>> groupHeaderCategories;
@@ -70,7 +73,7 @@ public class AssetAllocationFragment extends Fragment {
             }
         };
 
-        actionBar.addTab(actionBar.newTab().setText("Product Types").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText(Html.fromHtml("Product <br/> Types")).setTabListener(tabListener));
         actionBar.addTab(actionBar.newTab().setText("Sectors").setTabListener(tabListener));
         actionBar.addTab(actionBar.newTab().setText("Regional").setTabListener(tabListener));
         actionBar.addTab(actionBar.newTab().setText("Countries").setTabListener(tabListener));
@@ -79,6 +82,7 @@ public class AssetAllocationFragment extends Fragment {
     private void initViews() {
         prepareData();
         assetAllocationList = (ExpandableListView) v.findViewById(R.id.asset_allocation_list);
+        scrollView = (ScrollView) v.findViewById(R.id.asset_allocation_scroll_view);
         assetAllocationPieChart = (ImageView) v.findViewById(R.id.asset_allocation_piechart);
         assetAllocationAdapter = new AssetAllocationListAdapter();
         assetAllocationAdapter.updateData(getAssetAllocation(0), getGroupHeaders(0));

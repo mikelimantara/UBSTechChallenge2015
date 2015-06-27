@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +32,12 @@ import com.prototype.ubs.techchallenge.utils.Constants;
 public class MainActivity extends ActionBarActivity implements LoginFragment.OnLoginListener,
         AdapterView.OnItemClickListener {
 
+    public enum MenuBarState {
+        DEFAULT, FILTER;
+    }
+
     private ActionBar actionBar = null;
+    private MenuBarState menuBarState = MenuBarState.DEFAULT;
     private ListView navList = null;
     private ArrayAdapter<String> drawerAdapter = null;
     private ActionBarDrawerToggle drawerToggle = null;
@@ -94,6 +101,26 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
         Log.d("action bar", "configuration");
+    }
+
+    public void setMenuBarState(MenuBarState state) {
+        this.menuBarState = state;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_action_bar, menu);
+
+        if (menuBarState == MenuBarState.DEFAULT) {
+            MenuItem iconFilter = menu.findItem(R.id.menu_filter);
+            iconFilter.setVisible(false);
+        } else if (menuBarState == MenuBarState.FILTER) {
+            MenuItem iconFilter = menu.findItem(R.id.menu_filter);
+            iconFilter.setVisible(true);
+        }
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

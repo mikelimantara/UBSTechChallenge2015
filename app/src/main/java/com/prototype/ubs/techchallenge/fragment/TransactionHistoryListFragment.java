@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.prototype.ubs.techchallenge.MainActivity;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.Transaction;
 
@@ -39,6 +40,9 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
         transactionHistoryAdapter = new TransactionHistoryAdapter(transactionList);
         transactionHistoryLv.setAdapter(transactionHistoryAdapter);
         transactionHistoryLv.setOnItemClickListener(this);
+
+        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.FILTER);
+        getActivity().invalidateOptionsMenu();
 
         return v;
     }

@@ -36,7 +36,7 @@
 
     <!-- Asset Allocation-->
     <dimen name="asset_allocation_pie_chart_padding">20dp</dimen>
-    <dimen name="asset_allocation_expandable_list_header_padding">15dp</dimen>
+    <dimen name="asset_allocation_expandable_list_header_padding">10dp</dimen>
     <dimen name="asset_allocation_expandable_list_header_fontsize">18sp</dimen>
     <dimen name="asset_allocation_expandable_list_content_fontsize">15sp</dimen>
     <dimen name="asset_allocation_expandable_list_content_marginLeft">30dp</dimen>

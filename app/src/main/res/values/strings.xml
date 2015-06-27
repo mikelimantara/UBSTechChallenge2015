@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Elite Bank</string>
+
+    <!-- Menu bar -->
+    <string name="menu_contact_advisor">Contact Advisor</string>
     
     <!-- Navigation drawer -->
     <string name="drawer_open">Open navigation drawer</string>
