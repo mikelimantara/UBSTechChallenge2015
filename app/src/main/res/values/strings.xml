@@ -71,4 +71,7 @@
         <item>Deutsche Bank</item>
         <item>Bank Indonesia</item>
     </string-array>
+
+    <!-- Filter -->
+    <string name="filter_date">dd/mm/yyyy</string>
 </resources>

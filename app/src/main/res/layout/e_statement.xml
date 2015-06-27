@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/e_statement_padding">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/e_statement_button_padding">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2015"
+            android:textSize="@dimen/e_statement_text_fontsize"
+            android:background="@color/transparent"
+            android:id="@+id/e_statement_2015" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2014"
+            android:textSize="@dimen/e_statement_text_fontsize"
+            android:background="@color/transparent"
+            android:id="@+id/e_statement_2014" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2013"
+            android:background="@color/transparent"
+            android:textSize="@dimen/e_statement_text_fontsize"
+            android:id="@+id/e_statement_2013" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2012"
+            android:background="@color/transparent"
+            android:textSize="@dimen/e_statement_text_fontsize"
+            android:id="@+id/e_statement_2012" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2011"
+            android:background="@color/transparent"
+            android:textSize="@dimen/e_statement_text_fontsize"
+            android:id="@+id/e_statement_2011" />
+    </LinearLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="263dp"
+        android:id="@+id/e_statement_month_gridview"
+        android:numColumns="4"
+        android:padding="@dimen/e_statement_button_padding"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:id="@+id/e_statement_download_button"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/e_statement_text_fontsize"
+        android:padding="@dimen/e_statement_download_button_padding"/>
+</LinearLayout>
