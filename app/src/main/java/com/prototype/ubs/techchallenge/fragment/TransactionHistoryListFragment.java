@@ -29,7 +29,6 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
     private ListView transactionHistoryLv;
     private TransactionHistoryAdapter transactionHistoryAdapter;
     private List<Transaction> transactionList;
-    private LinearLayout transactionDetailContainer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,7 +48,6 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
 
     private void initViews() {
         transactionHistoryLv = (ListView) v.findViewById(R.id.transaction_history_listview);
-        transactionDetailContainer = (LinearLayout) v.findViewById(R.id.transaction_history_detail_container);
     }
 
     private void prepareData() {
