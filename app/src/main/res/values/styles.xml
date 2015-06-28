@@ -17,6 +17,8 @@
         <item name="android:padding">5dp</item>
         <item name="android:text">@string/btn_back</item>
         <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/yellow</item>
+        <item name="android:background">@color/blue</item>
     </style>
 
     <!-- Transaction History Detail -->
