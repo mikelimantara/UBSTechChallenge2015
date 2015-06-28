@@ -9,6 +9,7 @@
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:layout_marginLeft="@dimen/meeting_reports_detail_bullet_marginLeft">
 
         <FrameLayout

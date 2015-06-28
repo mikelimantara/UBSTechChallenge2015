@@ -82,6 +82,6 @@
     <dimen name="e_statement_text_fontsize">15dp</dimen>
     <dimen name="e_statement_padding">10dp</dimen>
     <dimen name="e_statement_button_padding">10dp</dimen>
-    <dimen name="e_statement_month_fontsize">15dp</dimen>
+    <dimen name="e_statement_month_fontsize">18dp</dimen>
     <dimen name="e_statement_download_button_padding">20dp</dimen>
 </resources>

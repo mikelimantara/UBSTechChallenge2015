@@ -1,5 +1,6 @@
 package com.prototype.ubs.techchallenge;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -19,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.prototype.ubs.techchallenge.fragment.AssetAllocationFragment;
+import com.prototype.ubs.techchallenge.fragment.EStatementFragment;
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
 import com.prototype.ubs.techchallenge.fragment.MeetingReportFragment;
@@ -27,6 +29,7 @@ import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
 import com.prototype.ubs.techchallenge.model.MeetingReport;
 import com.prototype.ubs.techchallenge.model.Portfolio;
 import com.prototype.ubs.techchallenge.utils.Constants;
+import com.prototype.ubs.techchallenge.utils.ReplaceFont;
 
 /**
  * Created by Michael on 10/6/2015.
@@ -52,6 +55,9 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        ReplaceFont.replaceDefaultFont(this, "MONOSPACE", "DroidSerif.ttf");
+
         initViews();
 
         sharedPrefs = getSharedPreferences(Constants.SHARED_PREFS, Context.MODE_PRIVATE);
@@ -67,7 +73,8 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             // checkHasLogin();
 
 //            if (hasLogin) {
-            String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History", "Meeting Reports", "Market News"};
+            String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History",
+                    "E-Statement", "Meeting Reports", "Market News"};
             setNavigationDrawerItems(drawerItems);
             setupDrawer();
             PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
@@ -129,6 +136,13 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     public boolean onOptionsItemSelected(MenuItem item) {
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
+        }
+
+        if (item.getItemId() == R.id.menu_contact_advisor) {
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.contact_us);
+            dialog.setTitle("Need Any Help?");
+            dialog.show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -213,12 +227,18 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             drawerLayout.closeDrawer(navList);
             actionBar.setTitle("Transaction History");
         } else if (position == 3) {
+            EStatementFragment eStatementFragment = new EStatementFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content_container, eStatementFragment);
+            transaction.commit();
+            drawerLayout.closeDrawer(navList);
+        } else if (position == 4) {
             MeetingReportFragment meetingReportFragment = new MeetingReportFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, meetingReportFragment);
             transaction.commit();
             drawerLayout.closeDrawer(navList);
-        } else if (position == 4) {
+        } else if (position == 5) {
             MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);

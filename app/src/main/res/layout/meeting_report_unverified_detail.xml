@@ -77,7 +77,7 @@
             android:text="Discussion on possible assets buying in Eastern Europe"
             android:id="@+id/meeting_reports_unverified_topic"
             android:textStyle="bold"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"/>
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -103,9 +104,11 @@ public class MeetingReportFragment extends Fragment implements AdapterView.OnIte
                 if (tab.getPosition() == 0) {
                     tabPosition = tab.getPosition();
                     meetingReportsList.setAdapter(unverifiedMeetingReportListAdapter);
+                    meetingReportsList.setOnItemClickListener(MeetingReportFragment.this);
                 } else if (tab.getPosition() == 1) {
                     tabPosition = tab.getPosition();
                     meetingReportsList.setAdapter(verifiedMeetingReportListAdapter);
+                    meetingReportsList.setOnItemClickListener(MeetingReportFragment.this);
                 }
             }
 
@@ -135,7 +138,6 @@ public class MeetingReportFragment extends Fragment implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Log.d("meeting", "clicked");
 
         MeetingReportDetailFragment meetingReportDetailFragment = new MeetingReportDetailFragment();
 
@@ -182,7 +184,7 @@ public class MeetingReportFragment extends Fragment implements AdapterView.OnIte
             View v = convertView;
 
             if (v == null) {
-                MeetingReport report = (MeetingReport) getItem(position);
+                final MeetingReport report = (MeetingReport) getItem(position);
                 Log.d("report", report.getTopic());
 
                 if (report.getStatus() == MeetingReport.Status.VERIFIED) {
@@ -209,6 +211,39 @@ public class MeetingReportFragment extends Fragment implements AdapterView.OnIte
 
                 } else if (report.getStatus() == MeetingReport.Status.UNVERIFIED){
                     v = inflater.inflate(R.layout.unverified_report_item, parent, false);
+
+                    TextView txtMeetingDate = (TextView) v.findViewById(R.id.unverified_meeting_date);
+                    TextView txtTopic = (TextView) v.findViewById(R.id.meeting_reports_unverified_topic);
+                    TextView txtTags = (TextView) v.findViewById(R.id.meeting_reports_unverified_item_tag);
+                    final Button btnVerify = (Button) v.findViewById(R.id.verify_meeting_reports_button);
+
+                    txtMeetingDate.setText(report.getMeetingDate().toString(dateFormat));
+                    txtTopic.setText(report.getTopic());
+
+                    String tagString = "";
+                    for (int i = 0; i < report.getTags().size(); i++) {
+                        if (i < report.getTags().size() - 1) {
+                            tagString += report.getTags().get(i) + ", ";
+                        } else {
+                            tagString += report.getTags().get(i);
+                        }
+                    }
+                    txtTags.setText(tagString);
+                    btnVerify.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (v == btnVerify) {
+                                MeetingReportDetailFragment meetingReportDetailFragment = new MeetingReportDetailFragment();
+
+                                meetingReportDetailFragment.setMeetingReport(report);
+
+                                getActivity().getSupportFragmentManager().beginTransaction()
+                                        .replace(R.id.content_container, meetingReportDetailFragment)
+                                        .addToBackStack(null)
+                                        .commit();
+                            }
+                        }
+                    });
                 }
             }
 
