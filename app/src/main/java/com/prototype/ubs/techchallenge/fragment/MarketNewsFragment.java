@@ -16,7 +16,6 @@ import com.prototype.ubs.techchallenge.R;
  */
 public class MarketNewsFragment extends Fragment{
     private View v;
-    private ActionBar actionBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
