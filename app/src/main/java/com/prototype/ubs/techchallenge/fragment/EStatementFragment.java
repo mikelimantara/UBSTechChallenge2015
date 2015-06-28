@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.prototype.ubs.techchallenge.MainActivity;
 import com.prototype.ubs.techchallenge.R;
 
 /**
@@ -26,13 +29,24 @@ public class EStatementFragment extends Fragment implements View.OnClickListener
     private Button year1Btn;
     private GridView eStatementMonthGridView;
     private EStatementMonthAdapter eStatementMonthAdapter;
+    private ActionBar actionBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.e_statement, container, false);
         initViews();
 
+        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+        hideTabsOnActionBar();
+        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
+        getActivity().invalidateOptionsMenu();
+
         return v;
+    }
+
+    private void hideTabsOnActionBar() {
+        actionBar.removeAllTabs();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
     }
 
     private void initViews() {

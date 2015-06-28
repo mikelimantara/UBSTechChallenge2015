@@ -18,6 +18,7 @@ import com.prototype.ubs.techchallenge.model.Transaction;
 
 import org.joda.time.DateTime;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,9 +54,9 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
     private void prepareData() {
         transactionList = new ArrayList<Transaction>();
         Transaction a = new Transaction();
-        a.setAccountName("Aberdeen");
+        a.setAccountName("Account 1");
         a.setAccountNo("111-1111111");
-        a.setTransactionDate(new DateTime(2015, 5, 20, 12, 31, 0));
+        a.setTransactionDate(new DateTime(2015, 5, 22, 12, 31, 0));
         a.setTransactionRef("123-456-7890");
         a.setDescription("Buy 10 units @1003.85");
         a.setSettledAmount(10030.85);
@@ -64,9 +65,9 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
         a.setRealizedGainPercentage(5.67);
 
         Transaction b = new Transaction();
-        b.setAccountName("Aberdeen 2");
+        b.setAccountName("Account 2");
         b.setAccountNo("111-1111111");
-        b.setTransactionDate(new DateTime(2015, 5, 22, 12, 31, 0));
+        b.setTransactionDate(new DateTime(2015, 5, 20, 12, 31, 0));
         b.setTransactionRef("123-456-7891");
         b.setDescription("Buy 10 units @1003.85");
         b.setSettledAmount(10030.85);
@@ -91,12 +92,14 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
     }
 
     private class TransactionHistoryAdapter extends BaseAdapter {
+        private NumberFormat currencyFormatter;
         private List<Transaction> transactionHistoryList = new ArrayList<Transaction>();
         private LayoutInflater inflater = null;
 
         public TransactionHistoryAdapter(List<Transaction> transactionHistoryList) {
             this.transactionHistoryList = transactionHistoryList;
             inflater = LayoutInflater.from(getActivity());
+            currencyFormatter = NumberFormat.getCurrencyInstance();
         }
 
         @Override
@@ -132,7 +135,7 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
             txtTransactionDate.setText(transaction.getStringDate());
             txtAccount.setText(transaction.getAccountName());
             txtDescription.setText(transaction.getDescription());
-            txtSettledAmount.setText(transaction.getSettledAmount().toString());
+            txtSettledAmount.setText(currencyFormatter.format(transaction.getSettledAmount()));
 
             return v;
         }

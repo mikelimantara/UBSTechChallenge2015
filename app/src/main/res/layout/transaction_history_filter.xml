@@ -45,19 +45,21 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:layout_weight="0.5">
-
 
             <EditText
                 android:layout_width="@dimen/filter_date_textfield_size"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:hint="@string/filter_date"
                 android:textSize="@dimen/filter_text_fontsize"
                 android:id="@+id/transaction_history_filter_date_textfield_from" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/filter_calendar_icon"
                 android:id="@+id/transaction_history_filter_calender_from" />
         </LinearLayout>
 
@@ -65,19 +67,21 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_vertical"
             android:layout_weight="0.5">
-
 
             <EditText
                 android:layout_width="@dimen/filter_date_textfield_size"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:hint="@string/filter_date"
                 android:textSize="@dimen/filter_text_fontsize"
                 android:id="@+id/transaction_history_filter_date_textfield_to" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/filter_calendar_icon"
                 android:id="@+id/transaction_history_filter_calender_to" />
         </LinearLayout>
     </LinearLayout>
@@ -119,6 +123,7 @@
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Account-1"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_account1" />
@@ -127,6 +132,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Account-2"
+            android:background="@color/transparent"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_account2" />
 
@@ -149,29 +155,33 @@
         android:padding="@dimen/filter_button_padding">
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Equity"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_equity" />
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Bonds"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_bonds" />
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Funds"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_funds" />
 
         <Button
-            android:layout_width="70dp"
-            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Other Assets"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_other_assets" />
@@ -195,36 +205,41 @@
         android:padding="@dimen/filter_button_padding">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Buy"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_buy" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Sell"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_sell" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Switch"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_switch" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Dividend"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_dividend" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:background="@color/transparent"
             android:text="Split"
             android:textSize="@dimen/filter_text_fontsize"
             android:id="@+id/order_status_filter_button_split" />

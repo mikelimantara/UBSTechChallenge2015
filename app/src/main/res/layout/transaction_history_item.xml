@@ -61,7 +61,7 @@
             android:gravity="center"
             android:text="$10,003.85"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="15sp"/>
 
     </LinearLayout>
 
