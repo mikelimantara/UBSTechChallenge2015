@@ -5,4 +5,7 @@
     <color name="transparent">#00000000</color>
     <color name="blue">#0B5270</color>
     <color name="yellow">#EECC2E</color>
+    <color name="green">#44c788</color>
+    <color name="red">#e52f2f</color>
+    <color name="grey">#607D8B</color>
 </resources>

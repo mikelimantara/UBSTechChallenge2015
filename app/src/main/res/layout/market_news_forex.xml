@@ -7,357 +7,289 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Market Indices"
-        android:id="@+id/textView15"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textStyle="bold|normal"
-        android:textColor="@color/black"
-        android:textSize="@dimen/market_news_header_fontsize"
-        android:layout_gravity="center"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Latest update at 28th June 2015 15:33 (GMT+8)"
         android:layout_gravity="center"
         android:textSize="10dp"
-        android:textColor="@color/black"
         android:id="@+id/textView3" />
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="5dp">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:paddingTop="20dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="NIKE"
+                android:text="Currency"
                 android:textStyle="bold"
-                android:layout_weight="0.5"/>
+                android:layout_weight="0.5"
+                android:fontFamily="sans-serif-smallcaps" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+4.49"
+                android:text="Value"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:textStyle="bold"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:fontFamily="sans-serif-smallcaps"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="USD-JPY"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123.8500"
+                android:layout_weight="0.25"
+                android:gravity="center"
                 android:textColor="@color/green"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+4.27%"
+                android:text="+0.2200"
                 android:layout_weight="0.25"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/green"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="NIKE Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="CVC"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
+                android:text="USD-HKD"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+0.96"
+                android:text="7.7524"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-0.0003"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="AUD-USD"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0.7655"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-0.0083"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="NZD-USD"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="0.6856"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-0.0053"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="USD-SGD"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="1.3498"
+                android:layout_weight="0.25"
+                android:gravity="center"
                 android:textColor="@color/green"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+3.96%"
+                android:text="+0.0057"
                 android:layout_weight="0.25"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/green"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cablevision Systems Corp"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="MU"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
+                android:text="USD-TWD"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-4.36"
+                android:text="30.9310"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textStyle="bold"
                 android:textColor="@color/red"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-18.15%"
+                android:text="-0.0120"
                 android:layout_weight="0.25"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/red"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Micron Technology Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="OPK"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
+                android:text="USD-IDR"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+0.56"
+                android:text="13,307.5000"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:textColor="@color/red"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-20.0000"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/red"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="USD-CNY"
+                android:layout_weight="0.5"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="6.2904"
+                android:layout_weight="0.25"
+                android:gravity="center"
                 android:textColor="@color/green"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+3.63%%"
-                android:layout_weight="0.25"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OPKO Health Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="ZTS"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-6.76"
+                android:text="+0.0002"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-12.21%"
-                android:layout_weight="0.25"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zoetis Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="QRVO"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-4.57"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-5.38%"
-                android:layout_weight="0.25"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Qorvo Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="MRO"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="+0.94"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:textColor="@color/green"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="+3.51%"
-                android:layout_weight="0.25"
-                android:gravity="center"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Marathon Oil Corp"
-            android:textSize="12dp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="FEYE"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-2.75"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-5.33%"
-                android:layout_weight="0.25"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FireEye Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
 </LinearLayout>

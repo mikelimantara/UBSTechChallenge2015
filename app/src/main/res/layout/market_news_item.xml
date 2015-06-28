@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="China regulators juggle IPOs with growth and a market plunge"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"
+            android:id="@+id/market_news_content_header" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:id="@+id/market_news_content_time"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+</LinearLayout>

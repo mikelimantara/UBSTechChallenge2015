@@ -1,103 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!--<TabHost-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/tabHost2"-->
-        <!--android:layout_gravity="center_horizontal">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<TabWidget-->
-                <!--android:id="@android:id/tabs"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"></TabWidget>-->
-
-            <!--<FrameLayout-->
-                <!--android:id="@android:id/tabcontent"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
-
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/mynews"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:orientation="vertical"></LinearLayout>-->
-
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/marketindices"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:orientation="vertical"></LinearLayout>-->
-
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/foreignexchange"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:orientation="vertical"></LinearLayout>-->
-
-                <!--<LinearLayout-->
-                    <!--android:id="@+id/keycommodities"-->
-                    <!--android:text="yeay"-->
-                    <!--android:orientation="vertical"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"></LinearLayout>-->
-
-            <!--</FrameLayout>-->
-        <!--</LinearLayout>-->
-    <!--</TabHost>-->
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="My Portfolio"
-                android:id="@+id/radioButton5"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Geographies"
-                android:id="@+id/radioButton4"
-                android:checked="false" />
-        </LinearLayout>
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Filter"
-            android:entries="@array/news_titles"
-            android:prompt="@string/filter_by"
-            android:spinnerMode="dropdown" />
-    </LinearLayout>
+    android:layout_height="match_parent"
+    android:padding="10dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your news:"
-        android:id="@+id/textView15" />
+        android:text="Latest News"
+        android:id="@+id/textView15"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|normal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/market_news_header_fontsize"
+        android:layout_gravity="center"/>
 
-    <ListView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="As of 28th June 2015 16:51 (GMT+8)"
+        android:textSize="10dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="5dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_gravity="center_horizontal" />
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="China regulators juggle IPOs with growth and a market plunge"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"
+            android:id="@+id/market_news_content_header" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/imageView2"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:id="@+id/market_news_content_time"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="'Nein Danke' - smaller German firms see U.S. trade deal as threat"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="China central bank eases policy again to support economy"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="U.S. jobs, rates eyed as Greek zero hour approaches"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Greek parliament gives green light to Tspiras' bailout referendum"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Austria's Finance Minister says Grexit appears 'almost inevitable'"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="European shares fall, focus on weekend Greek debt talks"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp"/>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15 hrs ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nikkei drops on caution over Greece, up for the week"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 day ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="European shares pick up ahead of crucial Greece talks"
+            android:layout_weight="0.7"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/market_news_clock"
+            android:padding="3dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 day ago"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:padding="3dp"/>
+    </LinearLayout>
 
 </LinearLayout>

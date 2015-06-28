@@ -84,4 +84,7 @@
     <dimen name="e_statement_button_padding">10dp</dimen>
     <dimen name="e_statement_month_fontsize">18dp</dimen>
     <dimen name="e_statement_download_button_padding">20dp</dimen>
+
+    <!-- Market News -->
+    <dimen name="market_news_header_fontsize">25dp</dimen>
 </resources>
