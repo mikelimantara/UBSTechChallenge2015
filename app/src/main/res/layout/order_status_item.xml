@@ -61,7 +61,7 @@
             android:gravity="center"
             android:text="Completed"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
 </LinearLayout>

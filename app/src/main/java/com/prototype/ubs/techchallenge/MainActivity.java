@@ -25,6 +25,7 @@ import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
 import com.prototype.ubs.techchallenge.fragment.MeetingReportFragment;
 import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
+import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFilterFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
 import com.prototype.ubs.techchallenge.model.MeetingReport;
 import com.prototype.ubs.techchallenge.model.Portfolio;
@@ -143,6 +144,12 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             dialog.setContentView(R.layout.contact_us);
             dialog.setTitle("Need Any Help?");
             dialog.show();
+        } else if (item.getItemId() == R.id.menu_filter) {
+            TransactionHistoryFilterFragment transactionHistoryFilterFragment = new TransactionHistoryFilterFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_container, transactionHistoryFilterFragment)
+                    .addToBackStack(null)
+                    .commit();
         }
 
         return super.onOptionsItemSelected(item);

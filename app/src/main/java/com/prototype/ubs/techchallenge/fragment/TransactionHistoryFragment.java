@@ -90,7 +90,7 @@ public class TransactionHistoryFragment extends Fragment {
 
         public TransactionHistoryPagerAdapter(FragmentManager fm) {
             super(fm);
-            transactionHistoryFragments.add(new MarketNewsFragment());
+            transactionHistoryFragments.add(new OrderStatusFragment());
             transactionHistoryFragments.add(new TransactionHistoryListFragment());
         }
 
