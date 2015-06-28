@@ -2,7 +2,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/ActionBarTab</item>
-        <item name="android:typeface">monospace</item>
     </style>
 
     <style name="ActionBarTab" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
@@ -42,6 +41,8 @@
 
     <!-- E Statement -->
     <style name="EStatementLabel">
-
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
     </style>
 </resources>
