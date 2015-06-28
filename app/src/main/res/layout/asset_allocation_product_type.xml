@@ -21,7 +21,8 @@
                 android:id="@+id/asset_allocation_piechart"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/panel_background"
+                android:src="@drawable/asset_allocation_pie_chart"
+                android:background="@color/white"
                 android:gravity="center"/>
 
         </LinearLayout>
