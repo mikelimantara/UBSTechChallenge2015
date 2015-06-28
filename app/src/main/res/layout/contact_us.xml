@@ -76,6 +76,35 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="50dp"
+                android:src="@drawable/contact_us_video_call"
+                android:id="@+id/contact_us_video_call_icon"
+                android:layout_gravity="right"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Book an appointment"
+            android:id="@+id/contact_us_book_appointment_text"
+            android:layout_weight="0.7"
+            android:gravity="center_vertical"
+            android:padding="@dimen/contact_us_text_padding"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/contact_us_icon_padding">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="50dp"
                 android:src="@drawable/contact_us_book_appointment"
                 android:id="@+id/contact_us_book_appointment_icon"
                 android:layout_gravity="right"/>
@@ -105,9 +134,9 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:id="@+id/contact_us_call_24_hour_support_icon"
-                android:src="@drawable/contact_us_24_hour_support"/>
+                android:id="@+id/contact_us_24_icon"
+                android:src="@drawable/contact_us_customer_service"
+                android:layout_gravity="right"/>
         </FrameLayout>
 
         <TextView
