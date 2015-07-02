@@ -84,8 +84,8 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Book an appointment"
-            android:id="@+id/contact_us_book_appointment_text"
+            android:text="Video conference with your wealth manager"
+            android:id="@+id/contact_us_video_call_text"
             android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:padding="@dimen/contact_us_text_padding"/>
