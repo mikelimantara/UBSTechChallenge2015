@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -137,12 +138,21 @@ public class OrderStatusFragment extends Fragment {
             TextView txtOrderAccount = (TextView) v.findViewById(R.id.order_status_account);
             TextView txtOrderDesc = (TextView) v.findViewById(R.id.order_status_desc);
             TextView txtOrderStatus = (TextView) v.findViewById(R.id.order_status);
+            ImageView imgOrderStatus = (ImageView) v.findViewById(R.id.img_order_status);
 
             txtOrderDate.setText(orderStatus.getOrderDate().toString(dateFormat));
             txtOrderAccount.setText(orderStatus.getAccountName());
             txtOrderDesc.setText(orderStatus.getTransactionType().name() +
                     " by Amount " + currencyFormatter.format(orderStatus.getOrderAmount()));
             txtOrderStatus.setText(orderStatus.getStatus().name());
+
+            if (position % 3 == 0) {
+                imgOrderStatus.setImageDrawable(getResources().getDrawable(R.drawable.equity_icon));
+            } else if (position % 3 == 1){
+                imgOrderStatus.setImageDrawable(getResources().getDrawable(R.drawable.funds_icon));
+            } else if (position % 3 == 2){
+                imgOrderStatus.setImageDrawable(getResources().getDrawable(R.drawable.bond_icon));
+            }
 
             return v;
         }

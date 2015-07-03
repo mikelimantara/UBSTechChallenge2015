@@ -7,6 +7,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Currencies"
+        android:id="@+id/textView15"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|normal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/market_news_header_fontsize"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Latest update at 28th June 2015 15:33 (GMT+8)"
         android:layout_gravity="center"
         android:textSize="10dp"

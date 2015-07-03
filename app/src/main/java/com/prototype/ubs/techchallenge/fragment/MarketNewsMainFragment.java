@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -19,26 +18,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Michael on 18/6/2015.
+ * Created by Michael on 28/6/2015.
  */
-public class TransactionHistoryFragment extends Fragment {
-    private View v = null;
-    private ViewPager transactionHistoryViewPager = null;
-    private ActionBar actionBar = null;
-    private PagerAdapter pagerAdapter = null;
+public class MarketNewsMainFragment extends Fragment {
+    private View v;
+    private ViewPager viewPager;
+    private ActionBar actionBar;
+    private MarketNewsPagerAdapter marketNewsPagerAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.transaction_history_main, container, false);
+        v = inflater.inflate(R.layout.market_news_main, container, false);
         initViews();
 
         actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         showTabsOnActionBar();
+        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
+        getActivity().invalidateOptionsMenu();
 
-        pagerAdapter = new TransactionHistoryPagerAdapter(getChildFragmentManager());
-
-        transactionHistoryViewPager.setAdapter(pagerAdapter);
-        transactionHistoryViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+        viewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);
@@ -48,18 +46,10 @@ public class TransactionHistoryFragment extends Fragment {
         return v;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        setTitleOnActionBar();
-    }
-
     private void initViews() {
-        transactionHistoryViewPager = (ViewPager) v.findViewById(R.id.transaction_history_viewpager);
-    }
-
-    private void setTitleOnActionBar() {
-        actionBar.setTitle("Transaction History");
+        viewPager = (ViewPager) v.findViewById(R.id.market_news_viewpager);
+        marketNewsPagerAdapter = new MarketNewsPagerAdapter(getChildFragmentManager());
+        viewPager.setAdapter(marketNewsPagerAdapter);
     }
 
     private void showTabsOnActionBar() {
@@ -68,7 +58,7 @@ public class TransactionHistoryFragment extends Fragment {
 
         ActionBar.TabListener tabListener = new ActionBar.TabListener() {
             public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                transactionHistoryViewPager.setCurrentItem(tab.getPosition());
+                viewPager.setCurrentItem(tab.getPosition());
             }
 
             public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
@@ -80,28 +70,30 @@ public class TransactionHistoryFragment extends Fragment {
             }
         };
 
-        actionBar.addTab(actionBar.newTab().setText("Order Status").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Transaction History").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Market News").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Market Indices").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Currencies").setTabListener(tabListener));
     }
 
-    private class TransactionHistoryPagerAdapter extends FragmentStatePagerAdapter {
+    private class MarketNewsPagerAdapter extends FragmentStatePagerAdapter {
 
-        private List<Fragment> transactionHistoryFragments = new ArrayList<Fragment>();
+        private List<Fragment> marketNewsFragment = new ArrayList<Fragment>();
 
-        public TransactionHistoryPagerAdapter(FragmentManager fm) {
+        public MarketNewsPagerAdapter(FragmentManager fm) {
             super(fm);
-            transactionHistoryFragments.add(new OrderStatusFragment());
-            transactionHistoryFragments.add(new TransactionHistoryListFragment());
+            marketNewsFragment.add(new MarketNewsFragment());
+            marketNewsFragment.add(new MarketIndicesFragment());
+            marketNewsFragment.add(new MarketForexFragment());
         }
 
         @Override
         public Fragment getItem(int position) {
-            return transactionHistoryFragments.get(position);
+            return marketNewsFragment.get(position);
         }
 
         @Override
         public int getCount() {
-            return transactionHistoryFragments.size();
+            return marketNewsFragment.size();
         }
     }
 }

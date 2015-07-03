@@ -238,14 +238,14 @@ public class AssetAllocationFragment extends Fragment {
         ukList.add(new AssetAllocation("Bonds 3", 2.20));
 
         // 5.10%
-        List<AssetAllocation> australiaList = new ArrayList<>();
-        australiaList.add(new AssetAllocation("Funds 3", 3.95));
-        australiaList.add(new AssetAllocation("Funds 3", 1.15));
+        List<AssetAllocation> indonesiaList = new ArrayList<>();
+        indonesiaList.add(new AssetAllocation("Funds 3", 3.95));
+        indonesiaList.add(new AssetAllocation("Funds 3", 1.15));
 
         //  4.40%
-        List<AssetAllocation> indonesiaList = new ArrayList<>();
-        indonesiaList.add(new AssetAllocation("Equity 3", 2.20));
-        indonesiaList.add(new AssetAllocation("Equity 4", 2.20));
+        List<AssetAllocation> australiaList = new ArrayList<>();
+        australiaList.add(new AssetAllocation("Equity 3", 2.20));
+        australiaList.add(new AssetAllocation("Equity 4", 2.20));
 
         //  1.80%
         List<AssetAllocation> southAfricaList = new ArrayList<>();
@@ -253,8 +253,8 @@ public class AssetAllocationFragment extends Fragment {
 
         assetAllocation.put("USA", usaList);
         assetAllocation.put("United Kingdom", ukList);
-        assetAllocation.put("Australia", australiaList);
         assetAllocation.put("Indonesia", indonesiaList);
+        assetAllocation.put("Australia", australiaList);
         assetAllocation.put("South Africa", southAfricaList);
 
         assetAllocationCategories.add(assetAllocation);
@@ -286,8 +286,8 @@ public class AssetAllocationFragment extends Fragment {
         List<String> groupHeaderCountry = new ArrayList<>();
         groupHeaderCountry.add("USA");
         groupHeaderCountry.add("United Kingdom");
-        groupHeaderCountry.add("Australia");
         groupHeaderCountry.add("Indonesia");
+        groupHeaderCountry.add("Australia");
         groupHeaderCountry.add("South Africa");
 
         groupHeaderCategories.add(groupHeaderProductType);

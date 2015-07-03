@@ -1,5 +1,6 @@
 package com.prototype.ubs.techchallenge.fragment;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -131,11 +133,22 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
             TextView txtAccount = (TextView) v.findViewById(R.id.transaction_history_account);
             TextView txtDescription = (TextView) v.findViewById(R.id.transaction_history_desc);
             TextView txtSettledAmount = (TextView) v.findViewById(R.id.transaction_history_amount);
+            ImageView imgTransaction = (ImageView) v.findViewById(R.id.img_transaction_history_list);
 
             txtTransactionDate.setText(transaction.getStringDate());
             txtAccount.setText(transaction.getAccountName());
             txtDescription.setText(transaction.getDescription());
             txtSettledAmount.setText(currencyFormatter.format(transaction.getSettledAmount()));
+
+            if (position % 3 == 0) {
+                imgTransaction.setImageDrawable(getResources().getDrawable(R.drawable.equity_icon));
+            } else if (position % 3 == 1){
+                imgTransaction.setImageDrawable(getResources().getDrawable(R.drawable.funds_icon));
+            } else if (position % 3 == 2){
+                imgTransaction.setImageDrawable(getResources().getDrawable(R.drawable.bond_icon));
+            }
+
+
 
             return v;
         }

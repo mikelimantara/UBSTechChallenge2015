@@ -154,7 +154,7 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
             txtInvestmentUnrealizedGain.setTextColor(Color.RED);
         } else {
             txtInvestmentUnrealizedGain.setText("+" + txtInvestmentUnrealizedGain.getText());
-            txtInvestmentUnrealizedGain.setTextColor(Color.GREEN);
+            txtOtherAssetsUnrealizedGain.setTextColor(getResources().getColor(R.color.green));
         }
     }
 
@@ -191,7 +191,7 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
             txtOtherAssetsUnrealizedGain.setTextColor(Color.RED);
         } else {
             txtOtherAssetsUnrealizedGain.setText("+" + txtOtherAssetsUnrealizedGain.getText());
-            txtOtherAssetsUnrealizedGain.setTextColor(Color.GREEN);
+            txtOtherAssetsUnrealizedGain.setTextColor(getResources().getColor(R.color.green));
         }
     }
 

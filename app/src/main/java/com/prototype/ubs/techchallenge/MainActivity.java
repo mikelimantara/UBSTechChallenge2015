@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -11,18 +13,25 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.prototype.ubs.techchallenge.fragment.AssetAllocationFragment;
 import com.prototype.ubs.techchallenge.fragment.EStatementFragment;
 import com.prototype.ubs.techchallenge.fragment.LoginFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsFragment;
+import com.prototype.ubs.techchallenge.fragment.MarketNewsMainFragment;
 import com.prototype.ubs.techchallenge.fragment.MeetingReportFragment;
 import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFilterFragment;
@@ -31,6 +40,8 @@ import com.prototype.ubs.techchallenge.model.MeetingReport;
 import com.prototype.ubs.techchallenge.model.Portfolio;
 import com.prototype.ubs.techchallenge.utils.Constants;
 import com.prototype.ubs.techchallenge.utils.ReplaceFont;
+
+import java.util.List;
 
 /**
  * Created by Michael on 10/6/2015.
@@ -45,7 +56,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
     private ActionBar actionBar = null;
     private MenuBarState menuBarState = MenuBarState.DEFAULT;
     private ListView navList = null;
-    private ArrayAdapter<String> drawerAdapter = null;
+    private NavigationDrawerAdapter drawerAdapter = null;
     private ActionBarDrawerToggle drawerToggle = null;
     private DrawerLayout drawerLayout = null;
     private SharedPreferences sharedPrefs = null;
@@ -76,7 +87,11 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
 //            if (hasLogin) {
             String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History",
                     "E-Statement", "Meeting Reports", "Market News"};
-            setNavigationDrawerItems(drawerItems);
+
+            String[] drawerIcons = {"portfolio", "asset_allocation", "transaction_history",
+                "download", "meeting_report", "market_news"};
+
+            setNavigationDrawerItems(drawerItems, drawerIcons);
             setupDrawer();
             PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
             getSupportFragmentManager()
@@ -168,9 +183,12 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         this.portfolio = portfolio;
     }
 
-    public void setNavigationDrawerItems(String[] items) {
-        drawerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+    public void setNavigationDrawerItems(String[] items, String[] icons) {
+        drawerAdapter = new NavigationDrawerAdapter(items, icons);
         navList.setAdapter(drawerAdapter);
+
+//        drawerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+//        navList.setAdapter(drawerAdapter);
     }
 
     private void initViews() {
@@ -227,12 +245,38 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
                     .commit();
             drawerLayout.closeDrawer(navList);
         } else if (position == 2) {
-            TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.content_container, transactionHistoryFragment);
-            transaction.commit();
             drawerLayout.closeDrawer(navList);
-            actionBar.setTitle("Transaction History");
+
+            final Dialog OTP = new Dialog(this);
+            OTP.setContentView(R.layout.otp);
+            OTP.setTitle("Enter a One-Time Password");
+
+            final Button cancel = (Button) OTP.findViewById(R.id.btn_otp_cancel);
+            final Button submit = (Button) OTP.findViewById(R.id.btn_otp_submit);
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (v == cancel) {
+                        OTP.dismiss();
+                    }
+                }
+            });
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (v == submit) {
+                        OTP.dismiss();
+                        TransactionHistoryFragment transactionHistoryFragment = new TransactionHistoryFragment();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.content_container, transactionHistoryFragment);
+                        transaction.commit();
+                        actionBar.setTitle("Transaction History");
+                    }
+                }
+            });
+
+            OTP.show();
+
         } else if (position == 3) {
             EStatementFragment eStatementFragment = new EStatementFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -246,7 +290,7 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
             transaction.commit();
             drawerLayout.closeDrawer(navList);
         } else if (position == 5) {
-            MarketNewsFragment marketNewsFragment = new MarketNewsFragment();
+            MarketNewsMainFragment marketNewsFragment = new MarketNewsMainFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);
             transaction.commit();
@@ -254,5 +298,51 @@ public class MainActivity extends ActionBarActivity implements LoginFragment.OnL
         }
     }
 
+    private class NavigationDrawerAdapter extends BaseAdapter {
+
+        String[] icons = {};
+        String[] title = {};
+        LayoutInflater inflater;
+
+        public NavigationDrawerAdapter(String[] title, String[] icons) {
+            inflater = LayoutInflater.from(MainActivity.this);
+            this.icons = icons;
+            this.title = title;
+        }
+
+        @Override
+        public int getCount() {
+            return title.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+
+            if (v == null) {
+                v = inflater.inflate(R.layout.side_bar_item, parent, false);
+            }
+
+            ImageView imgIcon = (ImageView) v.findViewById(R.id.side_bar_icon);
+            TextView txtTitle = (TextView) v.findViewById(R.id.side_bar_text);
+
+            Context ctx = imgIcon.getContext();
+            int resourceId = ctx.getResources().getIdentifier(icons[position], "drawable", ctx.getPackageName());
+            imgIcon.setImageResource(resourceId);
+            txtTitle.setText(title[position]);
+
+            return v;
+        }
+    }
 
 }
