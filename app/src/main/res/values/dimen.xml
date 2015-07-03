@@ -12,9 +12,11 @@
 
     <!-- Main content -->
     <dimen name="content_margin">10dp</dimen>
+    <dimen name="updated_time_fontsize">10sp</dimen>
 
     <!-- Portfolio Overview-->
-    <dimen name="overview_total_value_fontsize">17sp</dimen>
+    <dimen name="overview_page_padding">15dp</dimen>
+    <dimen name="overview_total_value_fontsize">35sp</dimen>
     <dimen name="overview_total_value_padding">2dp</dimen>
     <dimen name="overview_table_heading_fontsize">17sp</dimen>
     <dimen name="overview_list_content_fontsize">18sp</dimen>
