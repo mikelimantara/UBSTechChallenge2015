@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.prototype.ubs.techchallenge.MainActivity;
+import com.prototype.ubs.techchallenge.MainActivity22;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.Transaction;
 
@@ -35,12 +35,11 @@ public class TransactionHistoryDetailFragment extends Fragment implements View.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.transaction_history_item_detail, container, false);
-        hideTabsInActionBar();
+        setUpToolbar();
+
+//        hideTabsInActionBar();
         initViews();
         populateData();
-
-        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
-        getActivity().invalidateOptionsMenu();
 
         return v;
     }
@@ -54,6 +53,11 @@ public class TransactionHistoryDetailFragment extends Fragment implements View.O
         if (v == btnBack) {
             getActivity().getSupportFragmentManager().popBackStackImmediate();
         }
+    }
+
+    private void setUpToolbar() {
+        ((MainActivity)(getActivity())).setToolbarBasedOnContent("Transaction History",
+                MainActivity.MenuBarState.DEFAULT);
     }
 
     private void initViews() {

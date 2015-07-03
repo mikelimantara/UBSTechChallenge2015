@@ -2,91 +2,54 @@ package com.prototype.ubs.techchallenge.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.text.Html;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
+import com.prototype.ubs.techchallenge.MainActivity;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.AssetAllocation;
-import com.prototype.ubs.techchallenge.model.Portfolio;
+import com.prototype.ubs.techchallenge.utils.SlidingTabLayout;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Michael on 26/6/2015.
+ * Created by Michael on 3/7/2015.
  */
 public class AssetAllocationFragment extends Fragment {
     private View v;
-    private ActionBar actionBar;
-    private ExpandableListView assetAllocationList;
-    private AssetAllocationListAdapter assetAllocationAdapter;
-    private ImageView assetAllocationPieChart;
-    private ScrollView scrollView;
-
-    private List<HashMap<String, List<AssetAllocation>>> assetAllocationCategories;
+    private ViewPager assetAllocationViewPager;
     private List<List<String>> groupHeaderCategories;
-    private Portfolio portfolio;
+    private List<HashMap<String, List<AssetAllocation>>> assetAllocationCategories;
+    private AssetAllocationPagerAdapter assetAllocationPagerAdapter;
+    private SlidingTabLayout tabLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.asset_allocation_product_type, container, false);
+        v = inflater.inflate(R.layout.asset_allocation, container, false);
+        setUpToolbar();
         initViews();
-
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        showTabsOnActionBar();
 
         return v;
     }
 
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
-    }
-
-    private void showTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-            public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                assetAllocationAdapter.updateData(getAssetAllocation(tab.getPosition()),
-                        getGroupHeaders(tab.getPosition()));
-                assetAllocationAdapter.notifyDataSetChanged();
-            }
-
-            public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                // hide the given tab
-            }
-
-            public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                // probably ignore this event
-            }
-        };
-
-        actionBar.addTab(actionBar.newTab().setText(Html.fromHtml("Product <br/> Types")).setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Sectors").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Regional").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Countries").setTabListener(tabListener));
+    private void setUpToolbar() {
+        ((MainActivity)(getActivity())).setToolbarBasedOnContent("Asset Allocation",
+                MainActivity.MenuBarState.DEFAULT);
     }
 
     private void initViews() {
         prepareData();
-        assetAllocationList = (ExpandableListView) v.findViewById(R.id.asset_allocation_list);
-        scrollView = (ScrollView) v.findViewById(R.id.asset_allocation_scroll_view);
-        assetAllocationPieChart = (ImageView) v.findViewById(R.id.asset_allocation_piechart);
-        assetAllocationAdapter = new AssetAllocationListAdapter();
-        assetAllocationAdapter.updateData(getAssetAllocation(0), getGroupHeaders(0));
-        assetAllocationList.setAdapter(assetAllocationAdapter);
+        assetAllocationViewPager = (ViewPager) v.findViewById(R.id.asset_allocation_viewpager);
+        assetAllocationPagerAdapter = new AssetAllocationPagerAdapter(getChildFragmentManager());
+        assetAllocationViewPager.setAdapter(assetAllocationPagerAdapter);
+        tabLayout = (SlidingTabLayout) v.findViewById(R.id.asset_allocation_sliding_tab);
+        tabLayout.setViewPager(assetAllocationViewPager);
     }
 
     private HashMap<String, List<AssetAllocation>> getAssetAllocation(int tabPosition) {
@@ -296,106 +259,44 @@ public class AssetAllocationFragment extends Fragment {
         groupHeaderCategories.add(groupHeaderCountry);
     }
 
-    private class AssetAllocationListAdapter extends BaseExpandableListAdapter {
-        private HashMap<String, List<AssetAllocation>> assetAllocation;
-        private List<String> groupHeader;
-        private LayoutInflater inflater;
-        private final DecimalFormat percentageFormatter;
+    private class AssetAllocationPagerAdapter extends FragmentStatePagerAdapter {
 
-        public AssetAllocationListAdapter() {
-            percentageFormatter = new DecimalFormat("###.## '%'");
-            percentageFormatter.setMaximumFractionDigits(2);
-            this.inflater = LayoutInflater.from(getActivity());
+        private List<Fragment> assetAllocation = new ArrayList<Fragment>();
+        private String[] tabTitles = {"Product Type", "Sectors", "Regional", "Countries"};
+
+        public AssetAllocationPagerAdapter(FragmentManager fm) {
+            super(fm);
+            AssetAllocationProductTypeFragment productType = new AssetAllocationProductTypeFragment();
+            productType.setAssetAllocationData(getAssetAllocation(0), getGroupHeaders(0));
+
+            AssetAllocationSectorFragment sector = new AssetAllocationSectorFragment();
+            sector.setAssetAllocationData(getAssetAllocation(1), getGroupHeaders(1));
+
+            AssetAllocationRegionalFragment regional = new AssetAllocationRegionalFragment();
+            regional.setAssetAllocationData(getAssetAllocation(2), getGroupHeaders(2));
+
+            AssetAllocationCountryFragment country = new AssetAllocationCountryFragment();
+            country.setAssetAllocationData(getAssetAllocation(3), getGroupHeaders(3));
+
+            assetAllocation.add(productType);
+            assetAllocation.add(sector);
+            assetAllocation.add(regional);
+            assetAllocation.add(country);
         }
 
         @Override
-        public int getGroupCount() {
-            return groupHeader.size();
+        public Fragment getItem(int position) {
+            return assetAllocation.get(position);
         }
 
         @Override
-        public int getChildrenCount(int groupPosition) {
-            return assetAllocation.get(groupHeader.get(groupPosition)).size();
+        public int getCount() {
+            return assetAllocation.size();
         }
 
         @Override
-        public Object getGroup(int groupPosition) {
-            return groupHeader.get(groupPosition);
-        }
-
-        @Override
-        public Object getChild(int groupPosition, int childPosition) {
-            return assetAllocation.get(groupHeader.get(groupPosition)).get(childPosition);
-        }
-
-        @Override
-        public long getGroupId(int groupPosition) {
-            return groupPosition;
-        }
-
-        @Override
-        public long getChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return false;
-        }
-
-        @Override
-        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-            View v = convertView;
-
-            if (v == null) {
-                v = inflater.inflate(R.layout.asset_allocation_list_header, parent, false);
-            }
-
-            TextView txtName = (TextView) v.findViewById(R.id.asset_allocation_expandable_list_header);
-            TextView txtPercentage = (TextView) v.findViewById(R.id.asset_allocation_expandable_list_header_percentage);
-
-            String header = groupHeader.get(groupPosition);
-            txtName.setText(header);
-
-            List<AssetAllocation> groupChild = assetAllocation.get(header);
-            Double totalPercentage = 0.00;
-            for (AssetAllocation asset: groupChild) {
-                totalPercentage += asset.getPercentage();
-            }
-
-            txtPercentage.setText(percentageFormatter.format(totalPercentage));
-
-            return v;
-        }
-
-        @Override
-        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-            View v = convertView;
-
-            if (v == null) {
-                v = inflater.inflate(R.layout.asset_allocation_list_content, parent, false);
-            }
-
-            TextView txtName = (TextView) v.findViewById(R.id.asset_allocation_expandable_list_content);
-            TextView txtPercentage = (TextView) v.findViewById(R.id.asset_allocation_expandable_list_content_percentage);
-
-            AssetAllocation child = (AssetAllocation) getChild(groupPosition, childPosition);
-
-            txtName.setText(child.getProductName());
-            txtPercentage.setText(percentageFormatter.format(child.getPercentage()));
-
-            return v;
-        }
-
-        @Override
-        public boolean isChildSelectable(int groupPosition, int childPosition) {
-            return true;
-        }
-
-        public void updateData(HashMap<String, List<AssetAllocation>> assetAllocation,
-                               List<String> groupHeaders){
-            this.assetAllocation = assetAllocation;
-            this.groupHeader = groupHeaders;
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
         }
     }
 }

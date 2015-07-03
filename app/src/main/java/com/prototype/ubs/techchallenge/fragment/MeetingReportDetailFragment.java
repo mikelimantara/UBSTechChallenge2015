@@ -1,7 +1,6 @@
 package com.prototype.ubs.techchallenge.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -10,11 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.prototype.ubs.techchallenge.MainActivity;
+import com.prototype.ubs.techchallenge.MainActivity22;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.MeetingReport;
 import com.prototype.ubs.techchallenge.utils.Utils;
@@ -39,7 +38,6 @@ public class MeetingReportDetailFragment extends Fragment implements View.OnClic
     private Button btnRequestEdit;
 
     private MeetingReport report;
-    private ActionBar actionBar;
     private DateTimeFormatter dateFormat;
 
 
@@ -60,11 +58,6 @@ public class MeetingReportDetailFragment extends Fragment implements View.OnClic
 
         initViews();
         populateData();
-
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        hideTabsOnActionBar();
-        ((MainActivity) getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
-        getActivity().invalidateOptionsMenu();
 
         return v;
     }
@@ -117,10 +110,5 @@ public class MeetingReportDetailFragment extends Fragment implements View.OnClic
                 R.id.meeting_reports_bullet_point_content, report.getAgreement());
         agreementList.setAdapter(agreementAdapter);
         Utils.setListViewHeightBasedOnChildren(agreementList);
-    }
-
-    private void hideTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
     }
 }

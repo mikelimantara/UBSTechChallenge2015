@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.prototype.ubs.techchallenge.MainActivity;
 import com.prototype.ubs.techchallenge.R;
+import com.prototype.ubs.techchallenge.utils.SlidingTabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,69 +25,35 @@ import java.util.List;
 public class TransactionHistoryFragment extends Fragment {
     private View v = null;
     private ViewPager transactionHistoryViewPager = null;
-    private ActionBar actionBar = null;
     private PagerAdapter pagerAdapter = null;
+    private SlidingTabLayout tabLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.transaction_history_main, container, false);
+        setUpToolbar();
         initViews();
-
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        showTabsOnActionBar();
-
-        pagerAdapter = new TransactionHistoryPagerAdapter(getChildFragmentManager());
-
-        transactionHistoryViewPager.setAdapter(pagerAdapter);
-        transactionHistoryViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
-            @Override
-            public void onPageSelected(int position) {
-                actionBar.setSelectedNavigationItem(position);
-            }
-        });
 
         return v;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        setTitleOnActionBar();
+    private void setUpToolbar() {
+        ((MainActivity)(getActivity())).setToolbarBasedOnContent("Transaction History",
+                MainActivity.MenuBarState.FILTER);
     }
 
     private void initViews() {
         transactionHistoryViewPager = (ViewPager) v.findViewById(R.id.transaction_history_viewpager);
-    }
-
-    private void setTitleOnActionBar() {
-        actionBar.setTitle("Transaction History");
-    }
-
-    private void showTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-            public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                transactionHistoryViewPager.setCurrentItem(tab.getPosition());
-            }
-
-            public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                // hide the given tab
-            }
-
-            public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction ft) {
-                // probably ignore this event
-            }
-        };
-
-        actionBar.addTab(actionBar.newTab().setText("Order Status").setTabListener(tabListener));
-        actionBar.addTab(actionBar.newTab().setText("Transaction History").setTabListener(tabListener));
+        tabLayout = (SlidingTabLayout) v.findViewById(R.id.transaction_history_sliding_tab);
+        pagerAdapter = new TransactionHistoryPagerAdapter(getChildFragmentManager());
+        transactionHistoryViewPager.setAdapter(pagerAdapter);
+        tabLayout.setViewPager(transactionHistoryViewPager);
     }
 
     private class TransactionHistoryPagerAdapter extends FragmentStatePagerAdapter {
 
         private List<Fragment> transactionHistoryFragments = new ArrayList<Fragment>();
+        private String[] tabTitles = {"Order Status", "Transaction History"};
 
         public TransactionHistoryPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -102,6 +69,11 @@ public class TransactionHistoryFragment extends Fragment {
         @Override
         public int getCount() {
             return transactionHistoryFragments.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return tabTitles[position];
         }
     }
 }

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.prototype.ubs.techchallenge.MainActivity;
+import com.prototype.ubs.techchallenge.MainActivity22;
 import com.prototype.ubs.techchallenge.R;
 
 /**
@@ -16,22 +16,11 @@ import com.prototype.ubs.techchallenge.R;
  */
 public class MarketIndicesDetailFragment extends Fragment {
     private View v;
-    private ActionBar actionBar;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.market_indices_detail, container, false);
 
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        hideTabsOnActionBar();
-        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
-        getActivity().invalidateOptionsMenu();
-
         return v;
-    }
-
-    private void hideTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
     }
 }

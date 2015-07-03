@@ -1,7 +1,6 @@
 package com.prototype.ubs.techchallenge.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.prototype.ubs.techchallenge.MainActivity;
+import com.prototype.ubs.techchallenge.MainActivity22;
 import com.prototype.ubs.techchallenge.R;
 
 /**
@@ -20,7 +20,6 @@ import com.prototype.ubs.techchallenge.R;
 public class TransactionHistoryFilterFragment extends Fragment implements View.OnClickListener {
 
     private View v;
-    private ActionBar actionBar;
     private ImageView imgCalendarFrom;
     private ImageView imgCalendarTo;
     private EditText txtCalendarFrom;
@@ -29,14 +28,15 @@ public class TransactionHistoryFilterFragment extends Fragment implements View.O
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.transaction_history_filter, container, false);
+        setUpToolbar();
         initViews();
 
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        hideTabsOnActionBar();
-        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
-        getActivity().invalidateOptionsMenu();
-
         return v;
+    }
+
+    private void setUpToolbar() {
+        ((MainActivity)(getActivity())).setToolbarBasedOnContent("Transaction History Filter",
+                MainActivity.MenuBarState.DEFAULT);
     }
 
     @Override
@@ -60,11 +60,5 @@ public class TransactionHistoryFilterFragment extends Fragment implements View.O
 
         imgCalendarFrom.setOnClickListener(this);
         imgCalendarTo.setOnClickListener(this);
-    }
-
-
-    private void hideTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
     }
 }
