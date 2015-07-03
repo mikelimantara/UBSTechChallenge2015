@@ -85,7 +85,5 @@
         android:layout_height="wrap_content"
         android:text="Download"
         android:id="@+id/e_statement_download_button"
-        android:layout_gravity="center_horizontal"
-        android:textSize="@dimen/e_statement_text_fontsize"
-        android:padding="@dimen/e_statement_download_button_padding"/>
+        style="@style/BackButton"/>
 </LinearLayout>

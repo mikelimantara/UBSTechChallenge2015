@@ -114,10 +114,10 @@
                 android:layout_weight="0.5">
 
                 <Button
+                    style="@style/BackButton"
                     android:layout_width="@dimen/meeting_reports_verification_button_size"
                     android:layout_height="wrap_content"
                     android:text="Verify"
-                    android:textSize="@dimen/meeting_reports_verify_button_fontsize"
                     android:layout_gravity="right"
                     android:id="@+id/meeting_reports_verify_button" />
             </FrameLayout>
@@ -125,9 +125,11 @@
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="0.5">
 
                 <Button
+                    style="@style/BackButton"
                     android:layout_width="@dimen/meeting_reports_verification_button_size"
                     android:layout_height="wrap_content"
                     android:text="Request Edit"
