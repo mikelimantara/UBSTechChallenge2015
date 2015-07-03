@@ -1,11 +1,9 @@
 package com.prototype.ubs.techchallenge.fragment;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,13 +62,8 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.portfolio_overview, container, false);
+        setUpToolbar();
         initViews();
-
-        actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        hideTabsOnActionBar();
-        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.DEFAULT);
-        getActivity().invalidateOptionsMenu();
-
 
         currencyFormatter = NumberFormat.getCurrencyInstance();
         percentageFormatter = new DecimalFormat("###.## '%'");
@@ -78,7 +71,6 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
 
         if (portfolio == null) {
             portfolio = generatePortfolio();
-            ((MainActivity)(getActivity())).setPortfolio(portfolio);
         }
 
         setInitialData();
@@ -86,11 +78,9 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
         return v;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        setTitleOnActionBar();
+    private void setUpToolbar() {
+        ((MainActivity)(getActivity())).setToolbarBasedOnContent("Portfolio Overview",
+                MainActivity.MenuBarState.DEFAULT);
     }
 
     private void initViews() {
@@ -119,16 +109,6 @@ public class PortfolioOverviewFragment extends Fragment implements View.OnClickL
         cashLayout.setOnClickListener(this);
         insuranceLayout.setOnClickListener(this);
         otherAssetsLayout.setOnClickListener(this);
-    }
-
-    private void hideTabsOnActionBar() {
-        actionBar.removeAllTabs();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-    }
-
-    private void setTitleOnActionBar() {
-        ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("My Portfolio");
     }
 
     private void setInitialData() {

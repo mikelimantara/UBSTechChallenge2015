@@ -21,7 +21,6 @@
                 android:id="@+id/asset_allocation_piechart"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/asset_allocation_pie_chart"
                 android:background="@color/white"
                 android:gravity="center"/>
 
@@ -29,7 +28,7 @@
 
         <ExpandableListView
             android:layout_width="match_parent"
-            android:layout_height="1500dp"
+            android:layout_height="900dp"
             android:id="@+id/asset_allocation_list"
             android:layout_marginTop="10dp"
             android:paddingLeft="@dimen/asset_allocation_pie_chart_padding"

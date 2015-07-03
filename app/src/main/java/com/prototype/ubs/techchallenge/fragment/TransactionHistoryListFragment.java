@@ -1,6 +1,5 @@
 package com.prototype.ubs.techchallenge.fragment;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,11 +9,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.prototype.ubs.techchallenge.MainActivity;
+import com.prototype.ubs.techchallenge.MainActivity22;
 import com.prototype.ubs.techchallenge.R;
 import com.prototype.ubs.techchallenge.model.Transaction;
 
@@ -42,9 +40,6 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
         transactionHistoryAdapter = new TransactionHistoryAdapter(transactionList);
         transactionHistoryLv.setAdapter(transactionHistoryAdapter);
         transactionHistoryLv.setOnItemClickListener(this);
-
-        ((MainActivity)getActivity()).setMenuBarState(MainActivity.MenuBarState.FILTER);
-        getActivity().invalidateOptionsMenu();
 
         return v;
     }
@@ -147,8 +142,6 @@ public class TransactionHistoryListFragment extends Fragment implements AdapterV
             } else if (position % 3 == 2){
                 imgTransaction.setImageDrawable(getResources().getDrawable(R.drawable.bond_icon));
             }
-
-
 
             return v;
         }
