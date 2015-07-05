@@ -79,6 +79,7 @@
     <dimen name="filter_button_padding">5dp</dimen>
     <dimen name="filter_text_padding">5dp</dimen>
     <dimen name="filter_date_textfield_size">100dp</dimen>
+    <dimen name="filter_toggle_button_height">40dp</dimen>
 
     <!--E Statement -->
     <dimen name="e_statement_text_fontsize">15dp</dimen>

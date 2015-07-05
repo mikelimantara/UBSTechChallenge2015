@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +59,7 @@ public class MarketNewsMainFragment extends Fragment {
         public MarketNewsPagerAdapter(FragmentManager fm) {
             super(fm);
             marketNewsFragment.add(new MarketNewsFragment());
-            marketNewsFragment.add(new MarketIndicesFragment());
+            marketNewsFragment.add(new MarketStocksFragment());
             marketNewsFragment.add(new MarketForexFragment());
         }
 

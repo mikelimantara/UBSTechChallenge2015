@@ -63,6 +63,11 @@
                 android:fontFamily="sans-serif-smallcaps"/>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/divider" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -92,6 +97,13 @@
                 android:gravity="center"
                 android:textColor="@color/green"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -123,6 +135,13 @@
                 android:textColor="@color/red"/>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -152,6 +171,13 @@
                 android:gravity="center"
                 android:textColor="@color/red"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -183,6 +209,13 @@
                 android:textColor="@color/red"/>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -212,6 +245,13 @@
                 android:gravity="center"
                 android:textColor="@color/green"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -243,6 +283,13 @@
                 android:textColor="@color/red"/>
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -259,7 +306,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="13,307.5000"
+                android:text="13,307.5"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textColor="@color/red"/>
@@ -272,6 +319,13 @@
                 android:gravity="center"
                 android:textColor="@color/red"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -302,6 +356,14 @@
                 android:gravity="center"
                 android:textColor="@color/green"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/divider" />
+
     </LinearLayout>
 
 </LinearLayout>

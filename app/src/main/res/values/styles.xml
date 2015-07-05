@@ -40,10 +40,10 @@
         <item name="android:layout_marginLeft">@dimen/transaction_detail_content_marginleft</item>
     </style>
 
-    <style name="transaction_history_fiter_label">
-        <item name="android:padding">10dp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>
+    <style name="TransactionHistoryFilterButton">
+        <item name="android:background">@drawable/transaction_history_filter_button</item>
+        <item name="android:textColor">@color/transaction_history_filter_button_label_colour</item>
+        <item name="android:textSize">@dimen/filter_text_fontsize</item>
     </style>
 
     <!-- E Statement -->
