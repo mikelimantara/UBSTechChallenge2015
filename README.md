@@ -1,6 +1,11 @@
 # UBSTechChallenge2015
 
-#### Setup project: 
+#### Steps to Try Out in Android Phone :
+1. Clone this project
+2. Download Android Studio and import the project
+3. Run the app to connected USB Device (must enable Developer Mode and USB Debugging)
+
+#### Importing project to Android Studio: 
 1. open git bash and navigate to the folder to save the project in the local computer
 2. git clone https://github.com/mikelimantara/UBSTechChallenge2015.git
 3. open Android Studio. File > New > Import Project > choose the folder UBSTechChallenge2015 in the location saved in step 1
