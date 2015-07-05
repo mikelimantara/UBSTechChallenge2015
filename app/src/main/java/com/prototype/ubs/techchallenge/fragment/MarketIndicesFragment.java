@@ -10,14 +10,15 @@ import android.view.ViewGroup;
 import com.prototype.ubs.techchallenge.R;
 
 /**
- * Created by shelviadwihotama on 4/7/15.
+ * Created by Michael on 5/7/2015.
  */
-public class PortfolioOverview2 extends Fragment {
+public class MarketIndicesFragment extends Fragment {
     private View v;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.portfolio_investment_3, container, false);
+        v = inflater.inflate(R.layout.market_indices, container, false);
+
         return v;
     }
 }

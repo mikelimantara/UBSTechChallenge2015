@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Stocks"
+        android:text="Market Indices"
         android:id="@+id/textView15"
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="bold|normal"
@@ -26,7 +26,6 @@
         android:id="@+id/textView3" />
 
     <LinearLayout
-        android:id="@+id/market_stocks_mu"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -40,14 +39,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="MU"
+                android:text="ASX 200"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-4.36"
+                android:text="-61.53"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -56,7 +55,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-18.15%"
+                android:text="-1.10%"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textColor="@color/red"/>
@@ -65,7 +64,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Micron Technology Inc"
+            android:text="Australia"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -89,14 +88,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="NIKE"
+                android:text="Shanghai Comp"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+4.49"
+                android:text="+8.13"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -105,7 +104,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+4.27%"
+                android:text="+0.96%"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textColor="@color/green"/>
@@ -114,7 +113,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NIKE Inc"
+            android:text="China"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -138,32 +137,32 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="CVC"
+                android:text="CSI 300"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+0.96"
+                android:text="-222.08"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textColor="@color/green"/>
+                android:textColor="@color/red"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+3.96%"
+                android:text="-5.41%"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textColor="@color/green"/>
+                android:textColor="@color/red"/>
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cablevision Systems Corp"
+            android:text="China"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -187,32 +186,32 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="OPK"
+                android:text="Hang Seng"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+0.56"
+                android:text="-218.21"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:textColor="@color/green"/>
+                android:textColor="@color/red"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+3.63%"
+                android:text="-0.83"
                 android:layout_weight="0.25"
                 android:gravity="center"
-                android:textColor="@color/green"/>
+                android:textColor="@color/red"/>
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="OPKO Health Inc"
+            android:text="Hong Kong"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -236,112 +235,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="ZTS"
+                android:text="Jakarta Comp"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-6.76"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-12.21%"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textColor="@color/red"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Zoetis Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/divider" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="QRVO"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-4.57"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/red"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="-5.38%"
-                android:layout_weight="0.25"
-                android:gravity="center"
-                android:textColor="@color/red"/>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Qorvo Inc"
-            android:textSize="12dp"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/divider" />
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="MRO"
-                android:textStyle="bold"
-                android:layout_weight="0.5"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="+0.94"
+                android:text="+38.13"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -350,7 +251,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="+3.51%"
+                android:text="+0.77%"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textColor="@color/green"/>
@@ -359,7 +260,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marathon Oil Corp"
+            android:text="Indonesia"
             android:textSize="12dp"/>
     </LinearLayout>
 
@@ -383,14 +284,161 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="FEYE"
+                android:text="Nifty India"
                 android:textStyle="bold"
                 android:layout_weight="0.5"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-2.75"
+                android:text="+40.00"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+0.47%"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="India"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/divider" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nikkei 225"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+17.29"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+1.21%"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Japan"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/divider" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="STI Straits Times"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+14.89"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="+0.45%"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:textColor="@color/green"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Singapore"
+            android:textSize="12dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/divider" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Taiwan Weighted"
+                android:textStyle="bold"
+                android:layout_weight="0.5"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="-21.01"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textStyle="bold"
@@ -399,7 +447,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="-5.33%"
+                android:text="-0.22%"
                 android:layout_weight="0.25"
                 android:gravity="center"
                 android:textColor="@color/red"/>
@@ -408,7 +456,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FireEye Inc"
+            android:text="Korea"
             android:textSize="12dp"/>
     </LinearLayout>
 

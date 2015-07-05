@@ -54,11 +54,12 @@ public class MarketNewsMainFragment extends Fragment {
     private class MarketNewsPagerAdapter extends FragmentStatePagerAdapter {
 
         private List<Fragment> marketNewsFragment = new ArrayList<Fragment>();
-        private String[] tabTitles = {"Market News", "Market Indices", "Currencies"};
+        private String[] tabTitles = {"Market News", "Market Indices", "Stocks", "Currencies"};
 
         public MarketNewsPagerAdapter(FragmentManager fm) {
             super(fm);
             marketNewsFragment.add(new MarketNewsFragment());
+            marketNewsFragment.add(new MarketIndicesFragment());
             marketNewsFragment.add(new MarketStocksFragment());
             marketNewsFragment.add(new MarketForexFragment());
         }
