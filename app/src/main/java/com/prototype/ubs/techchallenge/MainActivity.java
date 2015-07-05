@@ -37,6 +37,7 @@ import com.prototype.ubs.techchallenge.fragment.PortfolioOverview2;
 import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFilterFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
+import com.prototype.ubs.techchallenge.fragment.WatchlistListFragment;
 
 /**
  * Created by Michael on 3/7/2015.
@@ -116,10 +117,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     public void setNavigationDrawerItems() {
         String[] drawerItems = {"Portfolio Overview", "Asset Allocation", "Transaction History",
-                "E-Statement", "Meeting Reports", "Market News"};
+                "E-Statement", "Meeting Reports", "Watchlist", "Market News"};
 
         String[] drawerIcons = {"portfolio", "asset_allocation", "transaction_history",
-                "download", "meeting_report", "market_news"};
+                "download", "meeting_report", "watchlist", "market_news"};
 
         drawerAdapter = new NavigationDrawerAdapter(drawerItems, drawerIcons);
         navList.setAdapter(drawerAdapter);
@@ -251,6 +252,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             transaction.commit();
             drawerLayout.closeDrawer(navList);
         } else if (position == 5) {
+            WatchlistListFragment watchlistListFragment = new WatchlistListFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content_container, watchlistListFragment);
+            transaction.commit();
+            drawerLayout.closeDrawer(navList);
+        } else if (position == 6) {
             MarketNewsMainFragment marketNewsFragment = new MarketNewsMainFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content_container, marketNewsFragment);

@@ -21,12 +21,14 @@
         android:gravity="right">
 
         <ImageView
+            android:id="@+id/img_watchlist_edit"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/edit_button"
             android:layout_gravity="right"/>
 
         <ImageView
+            android:id="@+id/img_watchlist_delete"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/delete_button"
