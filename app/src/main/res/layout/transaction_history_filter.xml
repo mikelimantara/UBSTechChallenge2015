@@ -56,8 +56,8 @@
                 android:id="@+id/transaction_history_filter_date_textfield_from" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/filter_calendar_icon"
                 android:id="@+id/transaction_history_filter_calender_from" />
@@ -78,8 +78,8 @@
                 android:id="@+id/transaction_history_filter_date_textfield_to" />
 
             <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
                 android:layout_marginLeft="5dp"
                 android:src="@drawable/filter_calendar_icon"
                 android:id="@+id/transaction_history_filter_calender_to" />
@@ -89,24 +89,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Or"
-        android:padding="@dimen/filter_text_padding"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="left">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:id="@+id/spinner" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Account"
         android:textStyle="bold"
         android:textSize="@dimen/filter_text_fontsize"

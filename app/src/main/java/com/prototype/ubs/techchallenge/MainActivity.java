@@ -79,10 +79,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         ImageLoader.getInstance().init(config);
 
         // Initial fragment to show
-        PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
-        getSupportFragmentManager()
-                .beginTransaction().replace(R.id.content_container, portfolioOverviewFragment)
-                .commit();
+        MarketNewsMainFragment marketNewsFragment = new MarketNewsMainFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.content_container, marketNewsFragment);
+        transaction.commit();
+        toolbar.setTitle("Market News");
     }
 
     @Override
