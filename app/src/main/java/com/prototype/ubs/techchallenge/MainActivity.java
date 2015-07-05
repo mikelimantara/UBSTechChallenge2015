@@ -33,6 +33,7 @@ import com.prototype.ubs.techchallenge.fragment.EStatementFragment;
 import com.prototype.ubs.techchallenge.fragment.MarketNewsMainFragment;
 import com.prototype.ubs.techchallenge.fragment.MeetingReportFragment;
 import com.prototype.ubs.techchallenge.fragment.MeetingReportUnverifiedFragment;
+import com.prototype.ubs.techchallenge.fragment.PortfolioOverview2;
 import com.prototype.ubs.techchallenge.fragment.PortfolioOverviewFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFilterFragment;
 import com.prototype.ubs.techchallenge.fragment.TransactionHistoryFragment;
@@ -193,7 +194,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0) {
-            PortfolioOverviewFragment portfolioOverviewFragment = new PortfolioOverviewFragment();
+            PortfolioOverview2 portfolioOverviewFragment = new PortfolioOverview2();
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.content_container, portfolioOverviewFragment)
                     .commit();
