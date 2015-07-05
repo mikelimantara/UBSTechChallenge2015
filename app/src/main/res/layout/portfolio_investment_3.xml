@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/overview_page_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="As of 3rd July 2015 (GMT +8)"
+            android:textSize="@dimen/updated_time_fontsize"
+            android:id="@+id/latest_update_time"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Asset Value"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="italic"
+            android:padding="5dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 1.2m"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="@dimen/overview_total_value_fontsize"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/overview_total_asset_value"
+            android:paddingBottom="7dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Currency"
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:gravity="right"
+                android:layout_weight="0.5"/>
+
+            <Spinner
+                android:layout_width="0dp"
+                android:layout_height="15dp"
+                android:id="@+id/overview_currency"
+                android:layout_weight="0.5"
+                android:gravity="left"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:layout_margin="1dp"
+                android:padding="15dp"
+                android:background="@drawable/overview_investment_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investment"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 1.2M"
+                    android:textColor="@color/yellow"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/overview_investment"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.8%"
+                            android:textStyle="bold"
+                            android:id="@+id/overview_investment_gain_percentage"
+                            android:textColor="@color/green_overview"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$123,123,123"
+                            android:textColor="@color/green_overview"
+                            android:textStyle="bold"
+                            android:id="@+id/overview_investment_gain_value" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/up_arrow"
+                        android:id="@+id/gain_or_loss_arrow"/>
+
+                </LinearLayout>
+             </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:layout_margin="1dp"
+                android:padding="15dp"
+                android:background="@drawable/overview_investment_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash Deposit"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 600K"
+                    android:textColor="@color/yellow"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/overview_cash"/>
+
+            </LinearLayout>
+
+         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:layout_margin="1dp"
+                android:padding="15dp"
+                android:background="@drawable/overview_investment_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Insurance"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 1.2M"
+                    android:textColor="@color/yellow"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:id="@+id/overview_insurance_sum_insured"
+                    android:paddingLeft="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="0.5"
+                android:layout_margin="1dp"
+                android:padding="15dp"
+                android:background="@drawable/overview_investment_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Other Assets"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 600K"
+                    android:id="@+id/overview_other_assets"
+                    android:textColor="@color/yellow"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:paddingLeft="5dp"/>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1.8%"
+                            android:textStyle="bold"
+                            android:id="@+id/overview_other_assets_gain_percentage"
+                            android:textColor="@color/green_overview"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$123,123,123"
+                            android:textColor="@color/green_overview"
+                            android:textStyle="bold"
+                            android:id="@+id/overview_investment_gain_percentage" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/up_arrow"
+                        android:id="@+id/gain_or_loss_arrow"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

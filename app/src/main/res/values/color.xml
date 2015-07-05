@@ -8,8 +8,5 @@
     <color name="green">#44c788</color>
     <color name="red">#e52f2f</color>
     <color name="grey">#607D8B</color>
-    <color name="cash_background">#5c898f</color>
-    <color name="orange">#f6c108</color>
-    <color name="other_assets_background">#6f0000</color>
-    <color name="insurance_background">#03a50e</color>
+    <color name="green_overview">#06d314</color>
 </resources>
