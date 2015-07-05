@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:text="Total Asset Value"
                     android:textStyle="bold"
-                    android:textSize="@dimen/overview_total_value_fontsize"
+                    android:textSize="14sp"
                     android:padding="@dimen/overview_total_value_padding" />
 
                 <TextView

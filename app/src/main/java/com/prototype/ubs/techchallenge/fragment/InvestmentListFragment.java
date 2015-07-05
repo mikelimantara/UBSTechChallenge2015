@@ -24,6 +24,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by Michael on 26/6/2015.
@@ -45,7 +46,7 @@ public class InvestmentListFragment extends Fragment implements ExpandableListVi
         v = inflater.inflate(R.layout.investment, container, false);
         initViews();
 
-        currencyFormatter = NumberFormat.getCurrencyInstance();
+        currencyFormatter = NumberFormat.getCurrencyInstance(Locale.US);
         percentageFormatter = new DecimalFormat("###.## '%'");
         percentageFormatter.setMaximumFractionDigits(2);
 
@@ -83,11 +84,10 @@ public class InvestmentListFragment extends Fragment implements ExpandableListVi
             txtUnrealizedGain.setText("-" + percentageFormatter.format(unrealizedGainPercentage) + " | "
                     + "-" + currencyFormatter.format(unrealizedGainAmt));
         } else {
-            txtUnrealizedGain.setTextColor(Color.GREEN);
+            txtUnrealizedGain.setTextColor(getActivity().getResources().getColor(R.color.green));
             txtUnrealizedGain.setText("+" + percentageFormatter.format(unrealizedGainPercentage) + " | "
                     + "+" + currencyFormatter.format(unrealizedGainAmt));
         }
-
     }
 
     private void setListViewHeight(ExpandableListView listView, int group) {
@@ -224,7 +224,7 @@ public class InvestmentListFragment extends Fragment implements ExpandableListVi
                 txtInvestmentUnrealizedGain.setText("-" + percentageFormatter.format(unrealizedGainPercentage) + " | " +
                     "-" + currencyFormatter.format(unrealizedGainAmt));
             } else {
-                txtInvestmentUnrealizedGain.setTextColor(Color.GREEN);
+                txtInvestmentUnrealizedGain.setTextColor(getActivity().getResources().getColor(R.color.green));
                 txtInvestmentUnrealizedGain.setText("+" + percentageFormatter.format(unrealizedGainPercentage) + " | " +
                         "+" + currencyFormatter.format(unrealizedGainAmt));
             }
@@ -253,7 +253,7 @@ public class InvestmentListFragment extends Fragment implements ExpandableListVi
                 txtInvestmentUnrealizedGain.setText("-" + percentageFormatter.format(investment.getUnrealizedGainPercentage()) + " | " +
                         "-" + currencyFormatter.format(investment.getUnrealizedGainAmt()));
             } else {
-                txtInvestmentUnrealizedGain.setTextColor(Color.GREEN);
+                txtInvestmentUnrealizedGain.setTextColor(getActivity().getResources().getColor(R.color.green));
                 txtInvestmentUnrealizedGain.setText("+" + percentageFormatter.format(investment.getUnrealizedGainPercentage()) + " | " +
                         "+" + currencyFormatter.format(investment.getUnrealizedGainAmt()));
             }

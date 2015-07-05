@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$ 3.5M"
+            android:text="$ 122.3M"
             android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="@dimen/overview_total_value_fontsize"
@@ -46,33 +46,31 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
                 android:text="Currency"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 android:textSize="20sp"
-                android:padding="5dp"
-                android:gravity="right"
-                android:layout_weight="0.5"/>
+                android:padding="5dp" />
 
             <Spinner
-                android:layout_width="0dp"
-                android:layout_height="15dp"
-                android:id="@+id/overview_currency"
-                android:layout_weight="0.5"
-                android:gravity="left"/>
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:id="@+id/spinner_overview_currency"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <LinearLayout
+                android:id="@+id/portfolio_overview_investment"
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:layout_margin="1dp"
                 android:padding="15dp"
@@ -82,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Investments"
-                    android:textSize="23dp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
                     android:fontFamily="sans-serif-light"/>
 
@@ -90,13 +88,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
                     android:padding="5dp"
-                    android:src="@drawable/Investments_new2"
+                    android:src="@drawable/investments_icon"
                     android:scaleType="fitStart"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="$ 1.2M"
+                    android:text="$ 120M"
                     android:textColor="@color/yellow"
                     android:textSize="25sp"
                     android:textStyle="bold"
@@ -107,7 +105,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                    android:gravity="bottom">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -126,19 +124,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$123,123,123"
+                            android:text="$ 2,160,000"
                             android:textColor="@color/green_overview"
                             android:textStyle="bold"
                             android:id="@+id/overview_investment_gain_value" />
                     </LinearLayout>
 
                     <ImageView
-                        android:layout_width="33dp"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitEnd"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:padding="3dp"
                         android:src="@drawable/up_arrow_1"
-                        android:id="@+id/gain_or_loss_arrow"/>
+                        android:id="@+id/img_investment_gain_or_loss_arrow"/>
 
                 </LinearLayout>
              </LinearLayout>
@@ -146,7 +143,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:layout_margin="1dp"
                 android:padding="15dp"
@@ -156,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cash Deposits"
-                    android:textSize="23dp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
                     android:fontFamily="sans-serif-light"/>
 
@@ -188,7 +185,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:layout_margin="1dp"
                 android:padding="15dp"
@@ -198,7 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Insurances"
-                    android:textSize="23dp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
                     android:fontFamily="sans-serif-light"/>
 
@@ -224,7 +221,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:layout_margin="1dp"
                 android:padding="15dp"
@@ -234,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Other Assets"
-                    android:textSize="23dp"
+                    android:textSize="20sp"
                     android:textColor="@color/white"
                     android:fontFamily="sans-serif-light"/>
 
@@ -258,7 +255,7 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                    android:gravity="bottom">
 
                     <LinearLayout
                         android:orientation="vertical"
@@ -277,19 +274,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$123,123,123"
+                            android:text="$ 10,800"
                             android:textColor="@color/green_overview"
                             android:textStyle="bold"
-                            android:id="@+id/overview_investment_gain_percentage" />
+                            android:id="@+id/overview_other_assets_gain_amount" />
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="35dp"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitEnd"
+                        android:layout_height="35dp"
                         android:padding="3dp"
                         android:src="@drawable/up_arrow_1"
-                        android:id="@+id/gain_or_loss_arrow"/>
+                        android:id="@+id/img_other_assets_gain_or_loss_arrow"/>
 
                 </LinearLayout>
 
