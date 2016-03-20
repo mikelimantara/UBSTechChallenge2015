@@ -13,3 +13,11 @@
 #### Development Tools:
 1. Android Studio https://developer.android.com/sdk/index.html
 2. Git
+
+#### Screenshots:
+<img src="https://raw.githubusercontent.com/mikelimantara/UBSTechChallenge2015/master/docs/images/login_screen.jpg" width="250"/>
+<img src="https://raw.githubusercontent.com/mikelimantara/UBSTechChallenge2015/master/docs/images/portfolio_overview.jpg" width="250"/>
+<img src="https://raw.githubusercontent.com/mikelimantara/UBSTechChallenge2015/master/docs/images/market_news.jpg" width="250"/>
+
+#### Video:
+[Video Link](https://drive.google.com/open?id=0B9uNKcrWN_JyU3lvaTE5ZUJ6Mk0)
